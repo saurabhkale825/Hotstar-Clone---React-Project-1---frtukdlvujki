@@ -1,0 +1,37 @@
+
+.video-songs{
+    /* border: 1px solid white;*/
+     width: 90vw;
+     position: relative;
+     left: 7%;
+     margin-top: 3rem;
+ }
+ 
+ .video-songs h3{
+     color: #ffffff;
+     position:relative ;
+     top: 15%;
+     left: 0.8%;
+ }
+ 
+ 
+ .potraitcarousal{
+     height: 300px;
+     width: 100%;
+     background-color: rgb(12, 12, 12);
+     color: white;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 1rem;
+ }
+ 
+ 
+ .control-dots{
+     display: none;
+ }
+ 
+ .individual-show{
+     padding:0  10px;
+ }
