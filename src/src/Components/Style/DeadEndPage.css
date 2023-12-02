@@ -1,0 +1,55 @@
+.deadend-page {
+  width: 100vw;
+  height: 100vh;
+  background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
+}
+
+.deadend-page-section {
+  width: 80%;
+  height: 80%;
+  border: 1px solid white;
+  position: relative;
+  top: 15%;
+  left: 10%;
+  background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1479056860242006021/pu/img/j9PdPDfpWgs2p0w3.jpg");
+  /*background-position:center;*/
+  background-size: cover;
+  
+}
+
+.deadend-back-button {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  top: 55%;
+  left:31%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(59, 67, 133, 0.842),
+    rgba(24, 39, 101, 0.797),rgb(1, 7, 29))
+  ;
+  border-radius: 10px;
+  color: white;
+}
+
+.deadend-conntent{
+    color: rgb(247, 244, 244);
+    position: relative;
+    top: -35%;
+    left: 35%;
+    
+}
+
+.deadend-conntent span {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 24px;
+    font-optical-sizing: 20px;
+}
+
+.deadend-conntent p{
+    font-size: medium;
+    color: bisque;
+}
+
+

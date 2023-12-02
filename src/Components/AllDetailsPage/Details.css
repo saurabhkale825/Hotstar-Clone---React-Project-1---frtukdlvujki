@@ -1,0 +1,115 @@
+.details-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.movie-title {
+  position: fixed;
+  top: 25%;
+  left: 10%;
+  color: white;
+  width: 30%;
+  height: 20%;
+  font-size: 60px;
+  inline-size: auto;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  /*border: 1px solid white;*/
+}
+.movie-description {
+  color: white;
+  position: fixed;
+  top: 52%;
+  left: 10%;
+  font-size: large;
+  width: 30%;
+}
+
+.rigid-content {
+  color: white;
+  position: fixed;
+  top: 45%;
+  left: 9%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 10px;
+}
+.dots {
+  position: absolute;
+  bottom: 30%;
+}
+
+.u-a {
+  background-color: rgba(243, 226, 226, 0.4);
+  padding: 2px;
+  border-radius: 10%;
+}
+.keywords {
+  color: white;
+  position: fixed;
+  top: 62%;
+  left: 10%;
+  width: 20%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 4%;
+  font-size: large;
+  font-weight: 600;
+}
+
+
+
+.btn-group {
+  position: fixed;
+  top: 70%;
+  left: 10%;
+  display: flex;
+  width:35%;
+  height: 10%;
+  gap: 5%;
+}
+.link-div{
+  width: 80%;
+}
+
+.watch-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.watch-btn button{
+  width: 100%;
+}
+.watch-btn:hover{
+  transform: scale(1.02);
+}
+.add-to-watchlist-btn{
+  width: 12%;
+  background-color: rgba(0,0,0,0.1);
+  color: white;
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.add-to-watchlist-btn:hover{
+  transform: scale(1.05);
+  background-color: rgba(255,255,255,0.1);
+}
+
