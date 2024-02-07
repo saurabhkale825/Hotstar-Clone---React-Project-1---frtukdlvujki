@@ -25,7 +25,7 @@ function MainNavigation() {
   const loginValue = JSON.parse(localStorage.getItem("user-info"));
   // console.log(loginValue.status);
   useEffect(() => {
-    if(loginValue.status === "success"){
+    if(loginValue?.status === "success"){
       setLogin(true);
     }
   }, []);
