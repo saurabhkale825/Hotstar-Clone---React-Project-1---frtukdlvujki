@@ -67,12 +67,20 @@
     position: relative;
     left: 7%;
     margin-top: 3rem;
+<<<<<<< HEAD
     border: 1px solid royalblue;
+=======
+    /* border: 1px solid royalblue; */
+>>>>>>> cda3a135690285cb05c6e65e1327448f9979e325
     display: flex;
     flex-wrap: wrap;
 }
 
 .search-page-individual-show{
+<<<<<<< HEAD
   border: 1px solid saddlebrown;
+=======
+  /* border: 1px solid saddlebrown; */
+>>>>>>> cda3a135690285cb05c6e65e1327448f9979e325
   padding: 10px;
 }
