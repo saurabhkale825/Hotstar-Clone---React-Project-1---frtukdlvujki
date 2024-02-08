@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 function HeroSection() {
   const background = [Banner1, Banner2, Banner3, Banner4, Banner5];
   const logo = [Logo1, Logo2, Logo3, Logo4, Logo5];
-  const discription = [
+  const description = [
     "Watch live stream of the ICC Men's Cricket World Cup 2023 match between NewZealand and Australia",
     "NEW EPISODE EVERY THURSDAY. Karan Johar brews a heady koffee in Season 8. Hosting glamourous A-listers, the chat digs deeper with more grounded&nbsp;conversations.",
     "Cars on the Road follows Lightning McQueen and his best friend Mater as they head east on a cross-country road trip to meet up with Mater’s sister.",
@@ -50,7 +50,7 @@ function HeroSection() {
       }}
     >
       <img src={logo[[imageIndex]]} />
-      <p className="discription">{discription[imageIndex]}</p>
+      <p className="description">{description[imageIndex]}</p>
       <Link to={"/deadend"}>
         <button className="watch-now">
           <img src={Icon} width="10%" height="10%" />
