@@ -1,4 +1,4 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 
 function GetVideos() {
@@ -9,32 +9,6 @@ function GetVideos() {
   const id = decodedUrl.split("/").pop().split(".")[0];
   console.log(id);
 
-  // async function addToWatchlist() {
-  //   try {
-  //     let item = id;
-  //     const Header = {
-  //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDBiZTY5YTNjYjUwMjQyNjVmYmI5NyIsImlhdCI6MTY5ODc0MTg2NSwiZXhwIjoxNzMwMjc3ODY1fQ.K6xvvZjJ_b3MQNx1kVGVHjKKs_y-4xCWrhgjlmb95cA",
-  //       projectID: "knjxpr9vh9wr",
-  //     };
-  //     let addData = await fetch(`${process.env.REACT_APP_WATCHLIST_URL}`, {
-  //       method: "PATCH",
-  //       headers: Header,
-  //       body: JSON.stringify(item),
-  //     });
-
-  //     let response = await addData.json();
-  //     console.log(response);
-  //     if (response.status === "success") {
-  //       alert(response.message);
-  //     } else {
-  //       alert(response.message);
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
   return (
     <>
       <video
@@ -44,7 +18,7 @@ function GetVideos() {
         style={{ maxWidth: "100%", height: "100%" }}
         autoPlay
       ></video>
-      
+
       <div
         style={{
           display: "flex",
@@ -64,7 +38,6 @@ function GetVideos() {
           Add to Watchlist
         </button> */}
       </div>
-      
     </>
   );
 }

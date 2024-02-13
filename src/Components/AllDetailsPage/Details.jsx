@@ -8,11 +8,8 @@ function Details() {
   const [data, setData] = useState([]);
   const { itemId } = useParams();
 
-  
-  // console.log("ItemId =>",itemId);
   async function addToWatchlist() {
     try {
-     
       const Header = {
         Authorization:
           "Bearerey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWM2YmZmNmM5ZTFlZWExMDgxYWZlMCIsImlhdCI6MTcwMDU3ODkzNywiZXhwIjoxNzMyMTE0OTM3fQ.4596MRE3V_S0dezYWWcPj4eh_P9zMGTeRCCxqITfxBA",
@@ -28,31 +25,26 @@ function Details() {
       console.log(response);
       if (response.status === "success") {
         alert(response.message);
-         console.log(response.data);
+        console.log(response.data);
       } else {
         alert(response.message);
       }
-    } catch (e) {
-      // console.log(e);
-    }
+    } catch (e) {}
   }
 
   useEffect(() => {
     async function fetchData() {
       // try {
-        const url = `${process.env.REACT_APP_GET_DATA_URL}/${itemId}`;
-        const getData = await fetch(url, {
-          method: "GET",
-          headers: {
-            projectID: "knjxpr9vh9wr",
-          },
-        });
-        const json = await getData.json();
-        // console.log(json.data);
-        setData(json.data);
-      // } catch (error) {
-      //   console.error("Error fetching data:", error);
-      // }
+      const url = `${process.env.REACT_APP_GET_DATA_URL}/${itemId}`;
+      const getData = await fetch(url, {
+        method: "GET",
+        headers: {
+          projectID: "knjxpr9vh9wr",
+        },
+      });
+      const json = await getData.json();
+
+      setData(json.data);
     }
     fetchData(data);
   }, [itemId]);
