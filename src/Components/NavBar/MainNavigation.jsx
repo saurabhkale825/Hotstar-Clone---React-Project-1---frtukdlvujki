@@ -15,7 +15,7 @@ import TvShowPage from "./Pages/TvShowPage";
 import WatchList from "../WatchList/WatchList";
 import AllContent from "../AllContent/AllContent";
 import EditProfilePage from "../NavBar/Pages/EditProfilePage";
-
+import PaymentPage from "../PaymentPage/PaymentPage";
 
 
 
@@ -23,7 +23,6 @@ function MainNavigation() {
   const [login, setLogin] = useState(false);
 
   const loginValue = JSON.parse(localStorage.getItem("user-info"));
-  // console.log(loginValue.status);
   useEffect(() => {
     if(loginValue?.status === "success"){
       setLogin(true);
@@ -38,30 +37,29 @@ function MainNavigation() {
           setLogin,
         }}
       >
-       
-       
-          <Router>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/movies" element={<MoviesPage />} />
-              <Route path="/tvshows" element={<TvShowPage />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/details/:itemId" element={<Details />} />
-              <Route path="/gettingvideo/:video_url" element={<GetVideo />} />
-              <Route path="/subscription" element={<Subscription />} />
-              <Route path="/deadend" element={<DeadEndPage />} />
-              <Route path="/user" element={<User />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/watchlist" element={<WatchList />} />
-              <Route path="/allcontent" element={<AllContent />} />
-              <Route path="/editprofile" element={<EditProfilePage />} />
-            </Routes>
-          </Router>
-          
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movies" element={<MoviesPage />} />
+            <Route path="/tvshows" element={<TvShowPage />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/details/:itemId" element={login? <Details/> : <User/>} />
+            <Route path="/gettingvideo/:video_url" element={<GetVideo />} />
+            <Route path="/subscription" element={<Subscription />} />
+            <Route path="/deadend" element={<DeadEndPage />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/search" element={login ? <SearchPage /> : <User/>} />
+            <Route path="/watchlist" element={login ? <WatchList/> : <User/>} />
+            <Route path="/allcontent" element={<AllContent />} />
+            <Route path="/payment" element={<PaymentPage />} />
+            {/* <Route path="/editprofile" element={<ProtectedRoute component={EditProfilePage} />} /> */}
+          </Routes>
+        </Router>
       </AuthContext.Provider>
     </>
   );
 }
+
 
 export default MainNavigation;

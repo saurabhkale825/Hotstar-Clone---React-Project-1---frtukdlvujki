@@ -37,8 +37,8 @@ function Genres() {
             autoPlay={false}
             selectedItem={1}
           >
-            {data && data.map((item) => (
-              <Link to={"/deadend"}>
+            {data && data.map((item , index) => (
+              <Link to={"/deadend"} key={index}>
                 <div className="individual-card"
                 >
                  <img src={item} alt="language" style={{ borderRadius:"5px", width:"100%"}}/>

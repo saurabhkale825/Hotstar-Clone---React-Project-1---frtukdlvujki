@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import "./WatchList.css";
-import {Link} from "react-router-dom";
-import Sidebar from "../NavBar/Sidebar"
+import Footer from "../NavBar/Footer"
+import { Link } from "react-router-dom";
+import Sidebar from "../NavBar/Sidebar";
 
 function WatchList() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
+
+  const user = localStorage.getItem("user-info");
+  const token = JSON.parse(user)?.token;
 
   useEffect(() => {
     async function fetchData() {
@@ -12,13 +16,13 @@ function WatchList() {
         const response = await fetch(`${process.env.REACT_APP_WATCHLIST_URL}`, {
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWM2YmZmNmM5ZTFlZWExMDgxYWZlMCIsImlhdCI6MTcwMDU4MTQyNCwiZXhwIjoxNzMyMTE3NDI0fQ.TXw4AoyOmBK5bB3lzxb2FKsnF9l6p_D2Kh8jWed7DX0",
+            Authorization: `Bearer ${token}`,
             projectID: "knjxpr9vh9wr",
           },
         });
-        const json = await response.json();
-        setData(json.data.shows);
+        const data = await response.json();
+        // console.log(data.data.shows);
+        setData(data?.data?.shows);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -26,24 +30,21 @@ function WatchList() {
     fetchData(data);
   }, []);
 
-  return (
-  <div className="watchlist">
-    <Sidebar/>
-    <div className="watchlist-heading">WatchList</div>
+  console.log(data);
 
-    {data.length>0? (data?.map((item) => (
-      <div key={item._id} className="watchList-content">
-        
-       <div className="watchlist-indivodual-show">
-       <Link to={`/details/${item._id}`}>
-        <img src={item.thumbnail} width= "120px" height="150px" alt="shows"/>
-        </Link>
+  return (
+    <div className="watchlist">
+      <h1 >Watchlist</h1>
+      <Sidebar />
+      <div className="show-container">
+        {data?.map((item) =>
+        <div key={item._id} className="watchlist-individual-show " >
+          <img src={item.thumbnail} alt="logo" width="150px" height="150px"/>
+          </div>)}
         </div>
-        
-      </div>
-    ))):<div style={{color:"white" , textAlign:"center"}}>WatchList is Empty</div>} 
-  </div>
-  )
-} 
+      <Footer />
+    </div>
+  );
+}
 
 export default WatchList;

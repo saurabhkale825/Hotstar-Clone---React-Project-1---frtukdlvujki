@@ -72,7 +72,7 @@ function AllContent() {
               </Link>
             ))
           ) : (
-            <h5 style={{ color: "white" }}>Loading....</h5>
+            <h5 className="white">Loading....</h5>
           )}
         </div>
         <Footer />

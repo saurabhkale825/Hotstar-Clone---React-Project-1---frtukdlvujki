@@ -34,8 +34,8 @@ function Documentary() {
       >
         {data?.length > 0 ? (
           data?.map((item) => (
-            <Link to={`/details/${item._id}`}>
-            <div className="individual-show" key={item._id}>
+            <Link to={`/details/${item._id}`} key={item._id}>
+            <div className="individual-show" >
              
               <img src={item.thumbnail} 
               alt={item.id} 

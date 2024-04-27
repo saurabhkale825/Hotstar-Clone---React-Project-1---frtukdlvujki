@@ -22,7 +22,6 @@ function User() {
         { login ?<ToUnlogUser/>:<LoginUser/>}
     </div>
     </Link>
-    {/* <Footer />  */}
     </div>
     <Footer/>
     </>

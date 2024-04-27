@@ -39,9 +39,9 @@ function Language() {
         autoPlay={false}
         selectedItem={2}
       >
-        {data.map((item) => (
-          <Link to={"/deadend"}>
-            <div className="individual-card" key={item._id}>
+        {data.map((item , index) => (
+          <Link to={"/deadend"}  key={index}>
+            <div className="individual-card">
               <img src={item} alt="language" style={{ borderRadius:"5px"}}/>
             </div>
           </Link>

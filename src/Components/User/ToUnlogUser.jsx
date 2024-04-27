@@ -12,16 +12,10 @@ function ToUnlogUser() {
     setLogin(false);
     localStorage.removeItem("user-info");
   };
-  let name = "user";
-  const userDataString = localStorage.getItem("user-info");
-
-  if (userDataString) {
-    // Parse the JSON string into a JavaScript object
-    const userData = JSON.parse(userDataString);
-    console.log("username", userData.data.name);
-    // Access the "name" property
-    name = userData.data.name;
-  }
+  
+  const user = localStorage.getItem('user-info');
+  const userName = user ? JSON.parse(user)?.data?.user?.name : ''; // Ensure user is defined
+  console.log(userName);
 
   return (
     <div className="unloged-user">
@@ -52,7 +46,7 @@ function ToUnlogUser() {
               src="https://img1.hotstarext.com/image/upload/w_201,h_200,c_fill/v1/feature/profile/38.png"
               alt="logo"
             />
-            <p style={{ color: "white" }}>{name}</p>
+            <p className="text-white capitalize">{userName}</p>
             </Link>
           </div>
           

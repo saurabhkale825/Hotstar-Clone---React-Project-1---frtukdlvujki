@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import LatestRelease from "../../Carousel/LetestRelease/LatestRelease";
 import TvShows from "../../Carousel/TvShows/TvShows";
 import Documentary from "../../Carousel/Documentary/Documentary";
@@ -12,10 +12,17 @@ import Sidebar from "../Sidebar";
 import Language from "../../Carousel/Language/Language";
 import SpecialCarousel from "../../Carousel/SpecialCarousel/SpecialCarousel";
 import Genres from "../../Carousel/Genres/Genres";
+import AuthContext from "../../../Context/AuthContext";
+import Login from "../../Login/Login";
+
 
 function HomePage() {
+
+  const {login} = useContext(AuthContext);
+
   return (
     <>
+    <div>
       <HeroSection />
       <Sidebar />
       <Logo/>
@@ -29,6 +36,7 @@ function HomePage() {
       <ShortFlimCarousel />
       <Documentary />
       <Footer />
+      </div> 
     </>
   );
 }

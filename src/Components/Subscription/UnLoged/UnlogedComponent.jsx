@@ -193,7 +193,7 @@ function UnlogedComponent() {
             </div>
           </button>
         </div>
-         <Link to={"/signup"}>     
+         <Link to={"/payment"}>     
         <button className="continue-btn">Continue with {(selectedPlan==="Super")? "Super":"Premium"}</button>
         </Link>
       </div>

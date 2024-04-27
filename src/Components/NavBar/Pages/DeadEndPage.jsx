@@ -15,7 +15,7 @@ function DeadEndPage() {
       </div>
 
       <div className="deadend-conntent">
-        <span>Check Back Later</span>
+        <div className="animated lightSpeedIn">Check Back Later</div>
         <br/>
         <br/>
         <p>Follow for more info</p>

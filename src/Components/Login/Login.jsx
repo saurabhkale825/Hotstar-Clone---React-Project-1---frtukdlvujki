@@ -1,27 +1,28 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-/*import ReactDOM from "react-dom";*/
 import "./Login.css";
 import Cancel from "../../Assets/Images/Login-Cancel.png";
 import AuthContext from "../../Context/AuthContext";
+import { toast } from "react-toastify";
+
 
 
 function Login() {
-
-  const {setLogin } = useContext(AuthContext);
+  const { setLogin } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   async function Login() {
     try {
-      let item = { "email": email, "password": password, "appType": "ott" };
+      let item = { email: email, password: password, appType: "ott" };
       const Header = {
-        'Content-Type': "application/json",
+        "Content-Type": "application/json",
         projectID: "knjxpr9vh9wr",
-        Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTFmZjViNDI5Y2M3NGZkMmI3ZDIzMiIsImlhdCI6MTY5OTg3MjYwMywiZXhwIjoxNzMxNDA4NjAzfQ.V9vD7a8HAB0BKuFYBcSbjx7T5HKecc3iKSuIrU81uqE"
       };
+
       let getData = await fetch(`${process.env.REACT_APP_LOGIN_URL}`, {
         method: "POST",
         headers: Header,
@@ -32,20 +33,19 @@ function Login() {
       console.log(response);
       if (response.status === "success") {
         localStorage.setItem("user-info", JSON.stringify(response));
-        alert("You are Logging in Successfully");
+        toast.success("You are Logging in Successfully");
         setLogin(true);
         setEmail("");
         setPassword("");
         navigate("/");
       } else {
-        alert(response.message);
+        toast.warning(response.message);
       }
     } catch (e) {
       console.log(e);
+      toast.error(e);
     }
   }
-
- 
 
   return (
     <div className="login-page-bg">
@@ -55,7 +55,7 @@ function Login() {
         </div>
 
         <div className="login-page-right-section">
-          <Link to={"/subscription"}>
+          <Link to={"/user"}>
             <img
               className="login-page-right-section-back-button"
               src={Cancel}
@@ -65,8 +65,7 @@ function Login() {
 
           <div className="login-page-text-content">
             <h3>Log in or sign up to continue</h3>
-           
-           
+
             <div className="login-page-password-display">Enter Email</div>
             <div className="login-page-password">
               <input
@@ -78,6 +77,7 @@ function Login() {
               ></input>
             </div>
 
+           
             <div className="login-page-password-display">Enter Password</div>
             <div className="login-page-password">
               <input
@@ -86,8 +86,6 @@ function Login() {
                 autoComplete="false"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-
-
               ></input>
             </div>
 
@@ -98,9 +96,8 @@ function Login() {
           </div>
 
           <div className="login-submit-btn">
-      <button onClick={Login}>Login
-      </button>
-      </div>
+            <button onClick={Login}>Login</button>
+          </div>
 
           <div className="login-page-right-section-footer">
             <span>Having trouble logging in? </span>

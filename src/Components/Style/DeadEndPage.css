@@ -1,19 +1,21 @@
 .deadend-page {
   width: 100vw;
   height: 100vh;
-  background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
+  background:linear-gradient(180deg,#091130d8,hsla(228, 68%, 18%, 0.66) 33.33%);
 }
 
 .deadend-page-section {
   width: 80%;
   height: 80%;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: relative;
   top: 15%;
   left: 10%;
   background-image: url("https://pbs.twimg.com/ext_tw_video_thumb/1479056860242006021/pu/img/j9PdPDfpWgs2p0w3.jpg");
   /*background-position:center;*/
   background-size: cover;
+  /* filter: blur(0.5px); */
+  box-shadow: 15px 15px 15px black;
   
 }
 
@@ -40,16 +42,78 @@
     
 }
 
-.deadend-conntent span {
+/* .deadend-conntent span {
     font-size: 40px;
     font-weight: 700;
     line-height: 24px;
     font-optical-sizing: 20px;
-}
+} */
 
 .deadend-conntent p{
     font-size: medium;
     color: bisque;
 }
 
+@-webkit-keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
 
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  font-size: 40px;
+  font-weight: 700;
+}
