@@ -13,11 +13,11 @@
 
 .show-container{
   width: 80%;
-  min-height: 80vh;
+  min-height: 50vh;
   position: relative;
   top: 10vh;
   left:10vw;
-  border : 1px solid white;
+  /* border : 1px solid white; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   /* gap: 50px; */
@@ -37,4 +37,19 @@
 .watchlist-individual-show:hover {
   transform: scale(1.2);
   transition: 0.3s ease;
+}
+
+
+.empty-watchlist-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(180, 175, 112);
+  text-shadow: 2px 2px 2px rebeccapurple;
+  height: max-content;
+  width: 70vw;
+  text-align: center;
+  margin-left: 5%;
 }

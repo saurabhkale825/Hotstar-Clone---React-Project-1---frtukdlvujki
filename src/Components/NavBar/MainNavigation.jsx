@@ -19,8 +19,11 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 
 
 
+
 function MainNavigation() {
   const [login, setLogin] = useState(false);
+  const [mobile , setMobile] = useState(false);
+  // const [screenWidth , setScreenWidth] = useState(0);
 
   const loginValue = JSON.parse(localStorage.getItem("user-info"));
   useEffect(() => {
@@ -28,6 +31,29 @@ function MainNavigation() {
       setLogin(true);
     }
   }, []);
+
+  
+  
+
+  useEffect(() => {
+    const handleScreenChange = () => {
+      const screenWidth = window.innerWidth;
+      setMobile(screenWidth <= 1024);
+    };
+
+    // Initial call to handleScreenChange
+    handleScreenChange();
+
+    // Add event listener for resize event
+    window.addEventListener("resize", handleScreenChange);
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener("resize", handleScreenChange);
+    };
+  }, []);
+
+
   
   return (
     <>
@@ -35,6 +61,7 @@ function MainNavigation() {
         value={{
           login,
           setLogin,
+          mobile
         }}
       >
         <Router>

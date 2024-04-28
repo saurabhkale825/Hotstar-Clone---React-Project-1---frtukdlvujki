@@ -37,10 +37,10 @@ function WatchList() {
       <h1 >Watchlist</h1>
       <Sidebar />
       <div className="show-container">
-        {data?.map((item) =>
+        {data ? data?.map((item) =>
         <div key={item._id} className="watchlist-individual-show " >
           <img src={item.thumbnail} alt="logo" width="150px" height="150px"/>
-          </div>)}
+          </div>):<div className="empty-watchlist-text">Watchlist is empty.</div>}
         </div>
       <Footer />
     </div>
