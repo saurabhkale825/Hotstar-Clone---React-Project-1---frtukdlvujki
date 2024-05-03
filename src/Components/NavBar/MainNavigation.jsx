@@ -23,7 +23,6 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 function MainNavigation() {
   const [login, setLogin] = useState(false);
   const [mobile , setMobile] = useState(false);
-  // const [screenWidth , setScreenWidth] = useState(0);
 
   const loginValue = JSON.parse(localStorage.getItem("user-info"));
   useEffect(() => {
@@ -78,7 +77,7 @@ function MainNavigation() {
             <Route path="/user" element={<User />} />
             <Route path="/search" element={login ? <SearchPage /> : <User/>} />
             <Route path="/watchlist" element={login ? <WatchList/> : <User/>} />
-            <Route path="/allcontent" element={<AllContent />} />
+            <Route path="/allcontent/:type" element={<AllContent />} />
             <Route path="/payment" element={<PaymentPage />} />
             {/* <Route path="/editprofile" element={<ProtectedRoute component={EditProfilePage} />} /> */}
           </Routes>

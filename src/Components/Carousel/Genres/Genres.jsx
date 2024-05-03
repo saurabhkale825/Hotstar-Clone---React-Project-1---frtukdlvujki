@@ -1,4 +1,4 @@
-import React from 'react'
+import {useContext} from 'react'
 import Romance from "../../../Assets/logo/Romance.webp"
 import Drama from "../../../Assets/logo/Drama.webp"
 import Family from "../../../Assets/logo/Family.webp"
@@ -17,13 +17,16 @@ import "./Genres.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import AuthContext from "../../../Context/AuthContext";
 
 function Genres() {
   
     const data= [Drama ,Family ,Reality ,Comedy , Mythology , Crime, Food , Action , TalkShow, LifeStyle ,Biopic, Science , Travel,Romance ];
+    const {mobile} = useContext(AuthContext);
+
 
     return (
-        <div className="genres">
+        <div className={mobile ? "mobile-genres" : "genres"}>
           <Carousel
             className="genres-carousel"
             showArrows={true}

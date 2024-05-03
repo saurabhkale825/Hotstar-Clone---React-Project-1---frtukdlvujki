@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ShortFlim.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
+import { useColorScheme } from "@mui/material";
+import AuthContext from "../../../Context/AuthContext";
 
 function ShortFlimCarousel() {
   const filterType = "short film";
   const [data] = useFetch(filterType);
+  const{mobile} = useContext(AuthContext);
 
   return (
-    <div className="tv-shows">
+    <div className={mobile ? "letest-mobile-release" : "letest-release"}>
      <div className="heading">
         <p className="heading-title">Short Flim</p>
-        <Link to={"/allcontent"}>
+        <Link to={`/allcontent/${filterType}`}>
         <div className="heading-button">
         <p>View All {">"}</p>
         </div>
@@ -36,7 +39,7 @@ function ShortFlimCarousel() {
         {data?.length > 0 ? (
           data?.map((item) => (
             <Link to={`/details/${item._id}`} key={item._id}> 
-            <div className="individual-show" >
+            <div className={mobile ? "individual-mobile-show" :"individual-show"} >
              
               <img src={item.thumbnail} 
               alt={item.id} 

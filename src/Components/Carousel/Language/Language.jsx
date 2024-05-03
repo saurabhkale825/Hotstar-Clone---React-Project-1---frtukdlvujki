@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from "react";
 import "./Language.css";
 import Hindi from "../../../Assets/logo/Hindi.webp";
 import English from "../../../Assets/logo/English.webp";
@@ -11,6 +11,7 @@ import Kannada from "../../../Assets/logo/Kannada.webp";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import AuthContext from "../../../Context/AuthContext";
 
 function Language() {
   const data = [
@@ -24,8 +25,10 @@ function Language() {
     Kannada,
   ];
 
+  const {mobile} = useContext(AuthContext);
+
   return (
-    <div className="language">
+    <div className={mobile ? "mobile-language" : "language"}>
       <Carousel
         className="lanaguage-carousel"
         showArrows={true}

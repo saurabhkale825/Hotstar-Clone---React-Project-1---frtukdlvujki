@@ -3,6 +3,7 @@
     height: 100vh;
     background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
 }
+
 .login-page{
     width:70%;
     height : 85%;
@@ -15,11 +16,9 @@
     border-radius: 8px;
     opacity: 2;
     box-shadow: #0f1014;
-    /* box-shadow: -5px -5px rgb(42, 43, 43); */
 }
 
 .login-page-left-section{
-    /* border : 2px solid red; */
     width:45%;
     height: 100%;
     margin: 0 0;
@@ -29,13 +28,6 @@
     background-size: cover;
 }
 
-.login-page-left-section div{
-    
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
 .login-page-right-section{
     /* border: 1px solid burlywood; */
@@ -46,6 +38,17 @@
     top: 0%;
     border-radius: 8px;
 }
+.mobile-login-page-right-section{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    left: 08%;
+    top: 0%;
+    border-radius: 8px;
+    /* border: 1px solid white; */
+}
+
+
 
 .login-page-right-section-back-button{
     width: 35px;
@@ -54,6 +57,17 @@
     position: relative;
     top: 3%;
     left: 85%;
+    background-color: #1415165d;
+    cursor: pointer;
+}
+
+.mobile-login-page-right-section-back-button{
+    width: 35px;
+    height: 35px;
+    background-color: aliceblue;
+    position: relative;
+    top: 3%;
+    left: 95%;
     background-color: #1415165d;
     cursor: pointer;
 }
@@ -103,21 +117,6 @@
 }
 
 
-
-/* .login-page-number-display{
-    border: none;
-    width: fit-content;
-    position: relative;
-    top: 3%;
-    left: 22%;
-    font-size: 12px;
-    font-family: "Inter",sans-serif;
-    color: #e1e6f0;
-    backdrop-filter: blur(10px);
-    display: block;
-    padding: 0 5px;
-
-} */
 
 .login-page-password {
     width: 90%;
@@ -193,7 +192,7 @@
 .login-submit-btn{
     width: 60%;
     height: 10%;
-    border: 1px solid #e1e6f0;
+    /* border: 1px solid #e1e6f0; */
     margin: 5% 15%;
     border-radius: 8px;
     

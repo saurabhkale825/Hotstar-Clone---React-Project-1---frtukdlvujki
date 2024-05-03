@@ -1,5 +1,5 @@
 import "./HeroSection.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState  , useContext} from "react";
 import Banner1 from "../../Assets/Images/Bg1.webp";
 import Banner2 from "../../Assets/Images/Bg2.webp";
 import Banner3 from "../../Assets/Images/Bg3.webp";
@@ -10,10 +10,13 @@ import Logo2 from "../../Assets/Images/Logo2.webp";
 import Logo3 from "../../Assets/Images/Logo3.webp";
 import Logo4 from "../../Assets/Images/Logo4.webp";
 import Logo5 from "../../Assets/Images/Logo5.webp";
-import Icon from "../../Assets/Images/play.png";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { Link } from "react-router-dom";
+import AuthContext from "../../Context/AuthContext"
 
 function HeroSection() {
+
+  const {mobile} = useContext(AuthContext);
   const background = [Banner1, Banner2, Banner3, Banner4, Banner5];
   const logo = [Logo1, Logo2, Logo3, Logo4, Logo5];
   const description = [
@@ -24,9 +27,8 @@ function HeroSection() {
     "NEW EPISODE EVERY FRIDAY AT 6:30 AM. The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes place after the events of “Avengers: Endgame.",
   ];
   const [imageIndex, setImageIndex] = useState(0);
-  const [automaticChangeIndex, setAutomaticChangeIndex] = useState(0); // We don't need this always
+  const [automaticChangeIndex, setAutomaticChangeIndex] = useState(0); 
 
-  // It will run on the first mount and everytime imageIndex state changes
   useEffect(() => {
     setTimeout(() => {
       setImageIndex((prevImageIndex) => {
@@ -39,23 +41,24 @@ function HeroSection() {
       setAutomaticChangeIndex((prevAutomaticChangeIndex) => {
         return prevAutomaticChangeIndex + 1;
       });
-    }, 5000);
+    }, 6000);
   }, [automaticChangeIndex]);
 
   return (
     <div
-      className="hero-section"
+      className={mobile ? "hero-section-mobile":"hero-section"}
       style={{
-        backgroundImage: `linear-gradient( to right, #000 10%, transparent 78% ),url(${background[imageIndex]})`,
+        backgroundImage: `linear-gradient( to ${mobile ? "top" : "right"}, #000 10%, transparent 78% ),url(${background[imageIndex]})`,
       }}
     >
-      <img src={logo[[imageIndex]]} />
-      <p className="description">{description[imageIndex]}</p>
+      <img src={logo[[imageIndex]]} className={mobile ? "hero-section-mobile-img":"hero-section-img"}/>
+      <p className="description">{mobile ? null : description[imageIndex]}</p>
       <Link to={"/deadend"}>
-        <button className="watch-now">
-          <img src={Icon} width="10%" height="10%" />
+        <div className={mobile ? "watch-now-mobile":"watch-now"
+      }>
+          < ArrowRightIcon sx={{fontSize:mobile ? 25 : 35}}/>
           Watch Now
-        </button>
+        </div>
       </Link>
     </div>
   );

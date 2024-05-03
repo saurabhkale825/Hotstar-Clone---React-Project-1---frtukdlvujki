@@ -1,21 +1,37 @@
 .loginuser {
-  width: 100%;
-  height: 100%;
-  margin: 2% 2%;
-  /*border: 1px solid white;*/
+  width: 100vw;
+  height: 100vh;
+  padding: 0 0 2vh 0 ;
   color: white;
+  /* border: 1px solid white; */
+}
+
+.mobile-loginuser{
+    width: 100vw;
+    min-height: 60vh;
+    padding: 0 0 2vh 0 ;
+    color: white;
 }
 
 .help-and-support-btn{
     position: absolute;
-    top: 10%;
-    right: 5%;
-    width: 230px;
+    top: 10vh;
+    right: 5vw;
+    width: 20vw;
     height: 50px;
     border-radius: 10px;
 }
 
-.help-and-support-btn button{
+.mobile-help-and-support-btn{
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    width: 30vw;
+    height: 50px;
+    border-radius: 6%;
+}
+
+.help-and-support-btn button , .mobile-help-and-support-btn button{
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -41,15 +57,29 @@
 
 .loginuser img{
     position: relative;
-    top: 15%;
+    top: 15vh;
+    width: 60%;
+    height: auto;
 }
+
+.mobile-loginuser img{
+    position: relative;
+    top: 15vh;
+    width: 60%;
+    height: auto;
+} 
+
 
 .loginuser-login-section{
     position: relative;
-    top: 12%;
+    top: 8vh;
+}
+.mobile-loginuser-login-section{
+    position: relative;
+    top: 12vh;
 }
 
-.loginuser-login-section h6{
+.loginuser-login-section h6 , .mobile-loginuser-login-section h6{
     font-size:24px;
     font-weight: 600;
     letter-spacing:-0.2px;
@@ -57,14 +87,14 @@
     margin-bottom: 8px;
 }
 
-.loginuser-login-section p{
+.loginuser-login-section p , .mobile-loginuser-login-section p{
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
     color: #8f98b2;
 }
 
-.loginuser-login-section button{
+.loginuser-login-section button , .mobile-loginuser-login-section button{
     width: 230px;
     height: 50px;
     border-radius: 10px;

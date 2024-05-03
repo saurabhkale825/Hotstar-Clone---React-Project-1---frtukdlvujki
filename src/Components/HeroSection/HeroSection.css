@@ -5,20 +5,38 @@
     background-size: cover;
     z-index: -25;
     margin-left: 0%;
+    padding-top: calc(0.01*100vh);
 }
-.hero-section img{
+.hero-section-mobile{
+    width: 100vw;
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    z-index: -25;
+    margin-left: 0%;
+}
+.hero-section-img{
     position: relative;
     top: 20%;
     left: 10%;
-    max-width: 25%;
-    height: fit-content;
+    max-width:25vw;
+    height: 20vh;
+    z-index: 0;
+}
+
+.hero-section-mobile-img{
+    position: relative;
+    top: 50%;
+    left: 10%;
+    max-width:15vw;
+    height: auto;
     z-index: 0;
 }
 .description{
     width: 35%;
     height: fit-content;
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     position: relative;
     top: 30%;
     left: 10%;
@@ -32,23 +50,39 @@
 .watch-now{
     position: relative;
     top:35% ;
-    left: 12%;
-    width: 25%;
+    left: 10%;
+    width: 20%;
     height: 10%;
     border-radius: 10px;
     font-size: 20px;
     font-weight: 600;
-    color: rgba(0,0,0,0.85);
-    box-shadow: 1px 1px black;
+    color: rgba(0, 0, 0, 0.85);
+    box-shadow: 5px 5px 5px rgba(225, 225, 225, 0.229);
+    outline: 0px ;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2%;
+    background-color: rgb(255, 255, 255);
 }
 
-.watch-now img{
+.watch-now-mobile{
     position: relative;
-    left: 0%;
-    top: -2%;
-} 
+    top:50% ;
+    left: 8%;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.85);
+    box-shadow: 5px 5px 5px rgba(225, 225, 225, 0.229);
+    outline: 0px ;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0 2px;
+}

@@ -6,17 +6,19 @@ import UnlogedComponent from "./UnLoged/UnlogedComponent";
 import LogedComponent from "./Loged/LogedComponent";
 import Footer from "../NavBar/Footer";
 import AuthContext from "../../Context/AuthContext";
+import CloseIcon from '@mui/icons-material/Close';
 
 function Subscription() {
-  const {login, setLogin} = useContext(AuthContext);
+  const {login, setLogin ,mobile} = useContext(AuthContext);
 
   return (
     <>
       <div className="subscription">
+        <div className="subscription-heading">
         <div className="left-section">
           <div className="back-button">
             <Link to={"/"}>
-              <img src={Cancel} alt="cancel"></img>
+              <CloseIcon sx={{ fontSize: mobile ? 25 : 40 }}/>
             </Link>
           </div>
 
@@ -27,32 +29,36 @@ function Subscription() {
             />
           </div>
         </div>
+        
 
         <div
           className={
             login  ? "right-section-loged" : "right-section-unloged"
           }
-        >
+        >{!mobile ? 
           <div className="language-dropdown">
-            <select name="languages" id="languages">
-              <option value="English">English</option>
-              <option value="Hindi">Hindi</option>
-              <option value="Tamil">Tamil</option>
-              <option value="Telugu">Telugu</option>
-              <option value="Marathi">Marathi</option>
+            <select name="languages" >
+              <option value="English"id="languages" >English</option>
+              <option value="Hindi" id="languages">Hindi</option>
+              <option value="Tamil" id="languages">Tamil</option>
+              <option value="Telugu" id="languages">Telugu</option>
+              <option value="Marathi" id="languages">Marathi</option>
             </select>
-          </div>
+          </div> : null}
           
           <Link to={"/login"}>
-            <div className="Login-btn">
-              <button >Login</button>
+            
+            <div className={mobile ? "mobile-Login-btn" :"Login-btn"}>
+             Login
             </div>
           </Link>
         </div>
-      </div>
+        </div>
+     
 
       <div>{login ? <LogedComponent /> : <UnlogedComponent />}</div>
-      <Footer />
+      </div>
+      {/* <Footer /> */}
     
     </>
   );

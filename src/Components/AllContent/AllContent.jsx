@@ -1,17 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./AllContent.css";
 import Sidebar from "../NavBar/Sidebar";
 import Footer from "../NavBar/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import AuthContext from "../../Context/AuthContext";
 
 function AllContent() {
   const [data, setData] = useState([]);
+  const { type } = useParams();
+  const{mobile} = useContext(AuthContext);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_GET_DATA_URL}?filter={"type":"video song"}`,
+          `${process.env.REACT_APP_GET_DATA_URL}?filter={"type":"${type}"}`,
           {
             method: "GET",
             headers: {
@@ -33,14 +36,12 @@ function AllContent() {
     <>
       <Sidebar />
       <div className="all-content-page">
-        <div className="all-content-heading">Movies</div>
-        <div className="all-content">
+        <div className={mobile ? "mobile-all-content-heading" :"all-content-heading"}>{type}</div>
+        <div className={mobile ? "mobile-all-content" :"all-content"}>
           {data?.length > 0 ? (
             data?.map((item) => (
               <Link to={`/details/${item._id}`}>
-              <div className="all-content-shows" key={item._id}>
-                
-                <div className="all-content-show-visible">
+                <div className={mobile ? "mobile-all-content-shows" : "all-content-shows"} key={item._id}>
                   <img
                     src={item.thumbnail}
                     width="130px"
@@ -48,27 +49,6 @@ function AllContent() {
                     alt="icon"
                   />
                 </div>
-
-                <div className="all-content-show-hidden">
-                  
-                    <div>
-                      <img
-                        src={item.thumbnail}
-                        width="180px"
-                        height="120px"
-                        alt="icon"
-                      />
-                    </div>
-                 
-
-                  <div className="all-content-button-group">
-                    <button className="all-content-button-1">Watch Now</button>
-
-                    <button className="all-content-button-2">+</button>
-                  </div>
-                  <p>{item.description}</p>
-                </div>
-              </div>
               </Link>
             ))
           ) : (

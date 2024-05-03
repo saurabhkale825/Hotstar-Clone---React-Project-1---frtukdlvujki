@@ -1,12 +1,15 @@
-import React from "react";
+import {useContext} from "react";
 import "./LoginUser.css";
 import { Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../Context/AuthContext";
 
 function LoginUser() {
+
+  const {mobile} = useContext(AuthContext);
   return (
-    <div className="loginuser">
-      <div className="help-and-support-btn">
+    <div className={mobile ? "mobile-loginuser" : "loginuser"}>
+      <div className={mobile ? "mobile-help-and-support-btn": "help-and-support-btn"}>
         <button>
           <span>
             <Icon name="question circle outline" size="large"></Icon>
@@ -20,7 +23,7 @@ function LoginUser() {
         alt="logo"
       />
 
-      <div className="loginuser-login-section">
+      <div className={mobile ? "mobile-loginuser-login-section" :"loginuser-login-section"}>
         <h6>Login to Disney+ Hotstar</h6>
 
         <p>

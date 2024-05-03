@@ -5,57 +5,41 @@ import { Icon } from "semantic-ui-react";
 import PlayIcon from "../../Assets/Images/play.png";
 import { toast } from "react-toastify";
 import AuthContext from "../../Context/AuthContext";
-import axios from 'axios';
+import Sidebar from "../NavBar/Sidebar";
+import axios from "axios";
 
 function Details() {
-  // const {login} = useContext(AuthContext);
   const [data, setData] = useState([]);
   const { itemId } = useParams();
   const [timer, setTimer] = useState(false);
   const [jwtToken, setJwtToken] = useState("");
-
-  const handleTimer = () => {
-    setInterval(() => setTimer((x) => !x), 1000);
-  };
+  const { mobile } = useContext(AuthContext);
 
   useEffect(() => {
     const user = localStorage.getItem("user-info");
     setJwtToken(JSON.parse(user).token);
   }, []);
 
-  // useEffect(() => {
-  //   handleTimer();
-  // }, [timer]);
-
-  // console.log("Token =>",jwtToken);
-  
-
   const patchWatchlistLike = async (jwtToken, showId) => {
     try {
       const response = await axios.patch(
-        'https://academics.newtonschool.co/api/v1/ott/watchlist/like',
+        "https://academics.newtonschool.co/api/v1/ott/watchlist/like",
         {
-          showId: showId
+          showId: showId,
         },
         {
           headers: {
-            'Authorization': `Bearer ${jwtToken}`,
-            'projectID': "knjxpr9vh9wr"
-          }
+            Authorization: `Bearer ${jwtToken}`,
+            projectID: "knjxpr9vh9wr",
+          },
         }
       );
-      
-      // Handle response
-      // console.log('Response:', response.data);
+
       toast(response.data.message);
-      
-      // Return response if needed
+
       return response.data;
     } catch (error) {
-      // Handle error
-      console.error('Error:', error);
-      
-      // Return null or handle error as needed
+      console.error("Error:", error);
       return null;
     }
   };
@@ -77,58 +61,85 @@ function Details() {
   }, [itemId]);
 
   return (
-    <div
-      className="details-page"
-      style={{
-        backgroundImage: `linear-gradient( to right, #000 10%, transparent 78% ),url(${data.thumbnail})`,
-        backgroundSize: "cover",
-      }}
-    >
-      <div className="movie-title">{data.title}</div>
+    <>
+      <div className={mobile ? "mobile-details-page" : "details-page"}>
+        {mobile ? (
+          <div
+            className="mobile-details-page-bg"
+            style={{
+              backgroundImage: `linear-gradient( to top, #000 0%, transparent 58% ),url(${data.thumbnail})`,
+              backgroundSize: "cover",
+              objectFit: "cover",
+            }}
+          ></div>
+        ) : (
+          <div
+            className="details-page-bg"
+            style={{
+              backgroundImage: `linear-gradient( to top, #000 10%, transparent 78% ),url(${data.thumbnail})`,
+              backgroundSize: "cover",
+            }}
+          ></div>
+        )}
 
-      <div className="rigid-content">
-        <div>2018</div>
-        <div>
-          <Icon className="dots" name="circle" size="tiny" />
+        <div className="detail-page-contain-mobile">
+          <div className={mobile ? "mobile-movie-title" : "movie-title"}>{data.title}</div>
+
+          <div className={mobile ? "mobile-rigid-content" : "rigid-content"}>
+            <div>2018</div>
+            <div>
+              <Icon className="dots" name="circle" size="tiny" />
+            </div>
+            <div>1h55m</div>
+            <div>
+              <Icon name="circle" size="tiny" className="dots" />
+            </div>
+            <div>English</div>
+            <div>
+              <Icon name="circle" size="tiny" className="dots" />
+            </div>
+            <div className="u-a">U/A 13+</div>
+          </div>
+
+          <div
+            className={
+              mobile ? "mobile-movie-description" : "movie-description"
+            }
+          >
+            {data.description}
+          </div>
+
+          <div className={mobile ? "mobile-keywords" : "keywords"}>
+            {data?.keywords?.map((keyword, index) => (
+              <React.Fragment key={index}>
+                <span className="white">{keyword}</span>
+                {index !== data?.keywords.length - 1 && <span>|</span>}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        <div>1h55m</div>
-        <div>
-          <Icon name="circle" size="tiny" className="dots" />
+
+        <div className={mobile ? "mobile-btn-group": "btn-group"}>
+          <div className="link-div">
+            <Link to={`/gettingvideo/${encodeURIComponent(data.video_url)}`}>
+              <button className={mobile ? "mobile-watch-btn" : "watch-btn"}>
+                <img src={PlayIcon} alt="logo" width="8%" height="40%" />
+                <p>Watch Now</p>
+              </button>
+            </Link>
+          </div>
+
+          <button
+            className="add-to-watchlist-btn"
+            onClick={() => patchWatchlistLike(jwtToken, itemId)}
+          >
+            +
+          </button>
         </div>
-        <div>English</div>
-        <div>
-          <Icon name="circle" size="tiny" className="dots" />
-        </div>
-        <div className="u-a">U/A 13+</div>
       </div>
 
-      <div className="movie-description">{data.description}</div>
-
-      <div className="keywords">
-        {data?.keywords?.map((keyword, index) => (
-          <React.Fragment key={index}>
-            <span className={timer === true ? "red" : "white"}>{keyword}</span>
-            {index !== data?.keywords.length - 1 && <span>|</span>}
-          </React.Fragment>
-        ))}
-      </div>
-
-      <div className="btn-group">
-        <div className="link-div">
-          <Link to={`/gettingvideo/${encodeURIComponent(data.video_url)}`}>
-            <button className="watch-btn">
-              <img src={PlayIcon} alt="logo" width="8%" height="40%" />
-              <p>Watch Now</p>
-            </button>
-          </Link>
-        </div>
-
-        <button className="add-to-watchlist-btn" onClick={() => 
-          patchWatchlistLike(jwtToken , itemId)}>
-          +
-        </button>
-      </div>
-    </div>
+      <Sidebar />
+    </>
   );
 }
 export default Details;

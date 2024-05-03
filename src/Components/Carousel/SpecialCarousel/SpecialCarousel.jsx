@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./SpecialCarousel.css";
 import DisneyLogo from "../../../Assets/logo/Disney.webp";
 import Pixar from "../../../Assets/logo/Pixar.webp";
@@ -12,10 +12,12 @@ import MarvelVideo from "../../../Assets/Video/MarvelVideo.mp4";
 import StarWarVideo from "../../../Assets/Video/StarWarsVideo.mp4";
 import NationalGeographicVideo from "../../../Assets/Video/NationalGeographicVideo.mp4";
 import HotstarSpecialVideo from "../../../Assets/Video/HotstarSpecialVideo.mp4";
+import AuthContext from "../../../Context/AuthContext";
 
 function SpecialCarousel() {
   const [isHover, setIsHover] = useState(false);
   const [divId, setDivId] = useState("");
+  const {mobile} = useContext(AuthContext);
 
   const handleMouseOver = (id) => {
     setIsHover(true);
@@ -27,14 +29,11 @@ function SpecialCarousel() {
     setDivId("");
   };
 
-  // useEffect(() => {
-  //   console.log(divId);
-  //   console.log("isHover", isHover);
-  // }, [(divId && isHover)]);
+  
 
   return (
-    <div className="special-carousel">
-      <div className="individual-category">
+    <div className={mobile ? "special-mobile-carousel" :"special-carousel"}>
+      <div className={mobile ? "individual-mobile-category" : "individual-category" }>
         <div
           onMouseOver={() => handleMouseOver("image1")}
           onMouseOut={handleMouseOut}
@@ -50,7 +49,7 @@ function SpecialCarousel() {
         </div>
       </div>
       
-      <div className="individual-category">
+      <div className={mobile ? "individual-mobile-category" : "individual-category"}>
         <div
           onMouseOver={() => handleMouseOver("image2")}
           onMouseOut={handleMouseOut}
@@ -66,7 +65,7 @@ function SpecialCarousel() {
         </div>
       </div>
 
-      <div className="individual-category">
+      <div className={mobile ? "individual-mobile-category" : "individual-category"}>
         <div
           onMouseOver={() => handleMouseOver("image3")}
           onMouseOut={handleMouseOut}
@@ -82,7 +81,7 @@ function SpecialCarousel() {
         </div>
       </div>
 
-      <div className="individual-category">
+      <div className={mobile ? "individual-mobile-category" : "individual-category"}>
         <div
           onMouseOver={() => handleMouseOver("image4")}
           onMouseOut={handleMouseOut}
@@ -98,7 +97,7 @@ function SpecialCarousel() {
         </div>
       </div>
 
-      <div className="individual-category">
+      <div className={mobile ? "individual-mobile-category" : "individual-category"}>
         <div
           onMouseOver={() => handleMouseOver("image5")}
           onMouseOut={handleMouseOut}
@@ -114,7 +113,7 @@ function SpecialCarousel() {
         </div>
       </div>
 
-      <div className="individual-category">
+      <div className={mobile ? "individual-mobile-category" : "individual-category"}>
         <div
           onMouseOver={() => handleMouseOver("image6")}
           onMouseOut={handleMouseOut}

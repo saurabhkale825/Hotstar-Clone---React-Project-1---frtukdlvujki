@@ -2,8 +2,8 @@
     /* border: 1px solid white; */
     width: 90vw;
     position: relative;
-    left: 7%;
-    margin-top: 3rem;
+    left: 8%;
+    top: calc(0.05 * 100vh);
   }
   
   .heading {
@@ -54,12 +54,17 @@
     display: none;
   }
   
-  .individual-show  img{
-    width: 170px;
-    height: 220px;
-  }
-  .individual-show:hover {
-    transform: scale(1.2);
-    transition: 0.3s ease;
-  }
+  
+.individual-show{
+  height: 200px;
+}
+
+.individual-mobile-show{
+  height: 10vh;
+}
+
+.individual-show  img{
+  width: 100%;
+  height: 100%;
+}
   

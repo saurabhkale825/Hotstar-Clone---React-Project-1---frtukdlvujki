@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import Cancel from "../../Assets/Images/Login-Cancel.png";
+import CloseIcon from '@mui/icons-material/Close';
 import AuthContext from "../../Context/AuthContext";
 import { toast } from "react-toastify";
 
 
 
 function Login() {
-  const { setLogin } = useContext(AuthContext);
+  const { setLogin , mobile} = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
 
   const navigate = useNavigate();
 
@@ -50,17 +49,13 @@ function Login() {
   return (
     <div className="login-page-bg">
       <div className="login-page">
-        <div className="login-page-left-section">
-          <div></div>
-        </div>
+        {mobile ? null : <div className="login-page-left-section">
+          {/* <div></div> */}
+        </div>}
 
-        <div className="login-page-right-section">
+        <div className={mobile ? "mobile-login-page-right-section" : "login-page-right-section"}>
           <Link to={"/user"}>
-            <img
-              className="login-page-right-section-back-button"
-              src={Cancel}
-              alt="back"
-            />
+            <CloseIcon className={mobile ? "mobile-login-page-right-section-back-button"  : "login-page-right-section-back-button" }/>
           </Link>
 
           <div className="login-page-text-content">

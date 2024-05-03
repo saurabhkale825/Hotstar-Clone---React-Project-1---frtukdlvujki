@@ -15,15 +15,16 @@ function User() {
 
   return (
     <>
-    <div className='user-page'>
     <Sidebar />
+    <div className='user-page'>
+    
     <Link to={"/user"}>
     <div className='user'>
         { login ?<ToUnlogUser/>:<LoginUser/>}
     </div>
     </Link>
     </div>
-    <Footer/>
+    <Footer />
     </>
   )
 }

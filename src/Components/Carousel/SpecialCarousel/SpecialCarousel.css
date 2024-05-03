@@ -1,10 +1,18 @@
 .special-carousel {
   width: 90%;
-  height: 120px;
-  margin: 1% 0 0 6%;
+  height:120px;
+  margin: calc(0.08*100vh) 0 0 6%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+.special-mobile-carousel{
+  width: 90vw;
+  height: 20%;
+  display: grid;
+  margin: calc(0.08*100vh) 0 0 6%;
+  grid-template-columns: repeat(3, 0.5fr); /* 3 columns with equal width */
+  /* gap: 20px; */
 }
 
 .individual-category {
@@ -12,13 +20,19 @@
   height: 80%;
 }
 
-.individual-category img {
+.individual-mobile-category{
+  width: 25vw;
+  padding: 1% 1%;
+  height: 45%;
+}
+
+.individual-category img , .individual-mobile-category img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
 }
 
-.individual-category video {
+.individual-category video , .individual-mobile-category video {
     width: 100%;
     height: 100%;
     border-radius: 10px;

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../Style/Footer.css";
 import { Icon } from "semantic-ui-react";
+import AuthContext from "../../Context/AuthContext"; 
 
 function Footer() {
+
+  const {mobile} = useContext(AuthContext);
+
   return (
-    <div className="main-footer">
+    <div className={mobile ?"main-mobile-footer" : "main-footer"}>
       <div className="footer">
         <div className="company">
           <h4>Company</h4>

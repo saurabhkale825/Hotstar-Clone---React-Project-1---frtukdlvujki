@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./WatchList.css";
-import Footer from "../NavBar/Footer"
+import Footer from "../NavBar/Footer";
 import { Link } from "react-router-dom";
 import Sidebar from "../NavBar/Sidebar";
+import AuthContext from "../../Context/AuthContext";
 
 function WatchList() {
   const [data, setData] = useState([]);
-
+  const { mobile } = useContext(AuthContext);
   const user = localStorage.getItem("user-info");
   const token = JSON.parse(user)?.token;
 
@@ -21,7 +22,6 @@ function WatchList() {
           },
         });
         const data = await response.json();
-        // console.log(data.data.shows);
         setData(data?.data?.shows);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -33,17 +33,31 @@ function WatchList() {
   console.log(data);
 
   return (
-    <div className="watchlist">
-      <h1 >Watchlist</h1>
+    <>
       <Sidebar />
-      <div className="show-container">
-        {data ? data?.map((item) =>
-        <div key={item._id} className="watchlist-individual-show " >
-          <img src={item.thumbnail} alt="logo" width="150px" height="150px"/>
-          </div>):<div className="empty-watchlist-text">Watchlist is empty.</div>}
+      <div className={mobile ? "mobile-watchlist" : "watchlist"}>
+        <h1>Watchlist</h1>
+        <div className="show-container">
+          {data && data.length > 0 ? (
+            data?.map((item) => (
+              <Link to={`/details/${item._id}`} key={item._id}>
+                <div key={item._id} className={mobile ? "mobile-watchlist-individual-show " : "watchlist-individual-show "}>
+                  <img
+                    src={item.thumbnail}
+                    alt="logo"
+                    width="15%"
+                    height="15%"
+                  />
+                </div>
+              </Link>
+            ))
+          ) : (
+            <div className="empty-watchlist-text">Watchlist is empty.</div>
+          )}
         </div>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

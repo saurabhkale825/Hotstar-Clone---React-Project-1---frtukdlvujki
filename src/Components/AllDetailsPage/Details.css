@@ -3,6 +3,21 @@
   height: 100vh;
 }
 
+.mobile-details-page{
+  width: 100vw;
+  height: 90vh;
+}
+
+.details-page-bg{
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-details-page-bg{
+  width: 100%;
+  height: 60%;
+}
+
 .movie-title {
   position: fixed;
   top: 25%;
@@ -16,8 +31,17 @@
   text-align: center;
   display: flex;
   align-items: center;
-  /*border: 1px solid white;*/
 }
+
+.mobile-movie-title{
+  position : relative;
+  top: 5vh;
+  left: 5vw;
+  width: 90vw;
+  text-align: center;
+  font-size: 10vw;
+}
+
 .movie-description {
   color: white;
   position: fixed;
@@ -40,13 +64,25 @@
   font-weight: 500;
   gap: 10px;
 }
+.mobile-rigid-content{
+  position: relative;
+  top: 10vh;
+  left: 5vw;
+  width: 90vw;
+  text-align: center;
+  font-size: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .dots {
   position: absolute;
   bottom: 30%;
 }
 
 .u-a {
-  background-color: rgba(243, 226, 226, 0.4);
+  background-color: rgba(6, 6, 6, 0);
   padding: 2px;
   border-radius: 10%;
 }
@@ -64,18 +100,41 @@
   font-weight: 600;
 }
 
+.mobile-keywords{
+  position: relative;
+  top: 12vh;
+  left: 5vw;
+  width: 90vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0 8vw;
+  font-size: 3vw;
 
+}
 
 .btn-group {
   position: fixed;
   top: 70%;
   left: 10%;
   display: flex;
-  width:35%;
+  width: 35%;
   height: 10%;
   gap: 5%;
 }
-.link-div{
+
+.mobile-btn-group{
+  position: relative;
+  top: 15vh;
+  left: 25vw;
+  width: 50vw;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid white; */
+  gap: 0 1vw;
+}
+.link-div {
   width: 80%;
 }
 
@@ -90,17 +149,30 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 10px;
-  border: 1px solid white;
 }
-.watch-btn button{
+
+.mobile-watch-btn{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  font-size: 4vw;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 10px;
+  /* border: 1px solid white; */
+}
+.watch-btn button {
   width: 100%;
 }
-.watch-btn:hover{
+.watch-btn:hover {
   transform: scale(1.02);
 }
-.add-to-watchlist-btn{
+.add-to-watchlist-btn {
   width: 12%;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
   font-size: 40px;
   border: none;
@@ -108,16 +180,11 @@
   border-radius: 10px;
 }
 
-.add-to-watchlist-btn:hover{
+.add-to-watchlist-btn:hover {
   transform: scale(1.05);
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.red{
-  color: red;
+.mobile-movie-description{
+  display: none;
 }
-
-.white{
-  color: white;
-}
-

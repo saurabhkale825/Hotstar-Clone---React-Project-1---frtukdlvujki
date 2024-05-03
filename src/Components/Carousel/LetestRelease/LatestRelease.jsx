@@ -1,24 +1,24 @@
-import React from "react";
+import { useContext } from "react";
 import "./LatestRelease.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
+import AuthContext from "../../../Context/AuthContext";
 
 function LatestRelease() {
   const filterType = "movie";
-
- 
+  const { mobile } = useContext(AuthContext);
   const [data] = useFetch(filterType);
 
   return (
-    <div className="letest-release">
+    <div className={mobile ? "letest-mobile-release" : "letest-release"}>
       <div className="heading">
         <p className="heading-title">Movies</p>
-        <Link to={"/allcontent"}>
-        <div className="heading-button">
-        <p>View All {">"}</p>
-        </div>
+        <Link to={`/allcontent/${filterType}`}>
+          <div className="heading-button">
+            <p>View All {">"}</p>
+          </div>
         </Link>
       </div>
 
@@ -35,17 +35,20 @@ function LatestRelease() {
         autoPlay={false}
         selectedItem={6}
       >
-        
         {data?.length > 0 ? (
           data?.map((item) => (
             <Link to={`/details/${item._id}`} key={item._id}>
-             <div className="individual-show" >
-             
-             <img src={item.thumbnail} 
-             alt={item.id} 
-             style={{ borderRadius:"5px"}}
-             />
-           </div>
+              <div
+                className={
+                  mobile ? "individual-mobile-show" : "individual-show"
+                }
+              >
+                <img
+                  src={item.thumbnail}
+                  alt={item.id}
+                  style={{ borderRadius: "5px" }}
+                />
+              </div>
             </Link>
           ))
         ) : (

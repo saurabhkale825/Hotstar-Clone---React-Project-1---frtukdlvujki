@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./VideoSong.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
+import { useColorScheme } from "@mui/material";
+import AuthContext from "../../../Context/AuthContext";
 
 function VideoSongCarousel() {
   const filterType = "video song";
   const [data] = useFetch(filterType);
+  const {mobile} = useContext(AuthContext);
 
 
   return (
-    <div className="video-songs">
+    <div className={mobile ? "letest-mobile-release" : "letest-release"}>
       <div className="heading">
         <p className="heading-title">Video Songs</p>
-        <Link to={"/allcontent"}>
+        <Link to={`/allcontent/${filterType}`}>
         <div className="heading-button">
         <p>View All {">"}</p>
         </div>
@@ -37,7 +40,7 @@ function VideoSongCarousel() {
         {data?.length > 0 ? (
           data?.map((item) => (
             <Link to={`/details/${item._id}`} key={item._id}>
-            <div className="individual-show" >
+            <div className={mobile ? "individual-mobile-show" :"individual-show"}>
              
               <img src={item.thumbnail} 
               alt={item.id} 
