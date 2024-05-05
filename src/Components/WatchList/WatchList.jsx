@@ -37,7 +37,7 @@ function WatchList() {
       <Sidebar />
       <div className={mobile ? "mobile-watchlist" : "watchlist"}>
         <h1>Watchlist</h1>
-        <div className="show-container">
+        <div className={mobile ? "mobile-show-container" : "show-container"}>
           {data && data.length > 0 ? (
             data?.map((item) => (
               <Link to={`/details/${item._id}`} key={item._id}>

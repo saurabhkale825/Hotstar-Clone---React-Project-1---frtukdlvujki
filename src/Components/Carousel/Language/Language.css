@@ -5,19 +5,20 @@
   position: relative;
   left: 7%;
   margin-top: 3rem;
-  /* border: 1px solid white; */
 }
 
 .mobile-language {
   text-align: center;
   color: white;
   width: 90vw;
+  height: 15vh;
   position: relative;
   left: 8%;
   margin-top: calc(0.01 * 100vh);
 }
+
 .lanaguage-carousel {
-  height: 120px;
+  height:100%;
   width: 100%;
   background: linear-gradient(180deg, #16181f, #0f1014 33.33%);
   color: white;
@@ -25,12 +26,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
 }
 
 .individual-card {
   margin: 0px 10px;
   cursor: pointer;
+  height: 100%;
+}
+
+.individual-card  img{
+  height: 100%;
 }
 
 .individual-card:hover {

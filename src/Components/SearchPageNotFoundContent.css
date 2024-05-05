@@ -1,16 +1,31 @@
 .search-page-not-found-content{
     width: 85%;
-    height: 80%;
+    height: 80vh;
     color: white;
     font-size: 25px;
     background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
     position: absolute;
     left:8%; 
     text-align: center;  
-    font-size: 18px;
+    font-size: 2vw;
     font-weight: 600;
     letter-spacing: normal;
     line-height: 24px;
+}
+
+.mobile-search-page-not-found-content{
+    width: 85%;
+    height: 50vh;
+    color: white;
+    font-size: 25px;
+    background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
+    position: absolute;
+    left:8%; 
+    text-align: center;  
+    font-size: 3vw;
+    font-weight: 600;
+    letter-spacing: normal;
+    /* line-height: 24px; */
 }
 
 .search-page-not-found-content p{

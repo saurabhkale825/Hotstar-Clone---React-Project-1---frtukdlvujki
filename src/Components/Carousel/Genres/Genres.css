@@ -5,18 +5,18 @@
   position: relative;
   left: 7%;
   margin-top: 3rem;
-  /*border: 1px solid white;*/
 }
 .mobile-genres {
   text-align: center;
   color: white;
   width: 90vw;
+  height: 15vh;
   position: relative;
   left: 8%;
   margin-top: calc(0.01 * 100vh);
 }
 .genres-carousel {
-  height: 150px;
+  height: 90%;
   width: 100%;
   background-color: transparent;
   color: white;
@@ -24,14 +24,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
-  /*border: 1px solid white;*/
 }
 
 .individual-card {
-  margin: 10px 10px;
+  margin: 0px 10px;
   cursor: pointer;
-  height: 120px;
+  height: 100%;
+}
+
+.individual-card  img{
+  height: 100%;
 }
 
 .individual-card:hover {

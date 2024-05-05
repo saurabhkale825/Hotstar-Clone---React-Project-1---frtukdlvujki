@@ -29,27 +29,61 @@ function Language() {
 
   return (
     <div className={mobile ? "mobile-language" : "language"}>
-      <Carousel
-        className="lanaguage-carousel"
-        showArrows={true}
-        showStatus={false}
-        showThumbs={false}
-        infiniteLoop={true}
-        centerMode={true}
-        centerSlidePercentage={20}
-        emulateTouch={false}
-        interval={6000}
-        autoPlay={false}
-        selectedItem={2}
-      >
-        {data.map((item , index) => (
-          <Link to={"/deadend"}  key={index}>
-            <div className="individual-card">
-              <img src={item} alt="language" style={{ borderRadius:"5px"}}/>
-            </div>
-          </Link>
-        ))}
-      </Carousel>
+      {mobile ? (
+        <Carousel
+          className="genres-carousel"
+          showArrows={true}
+          showStatus={false}
+          showThumbs={false}
+          infiniteLoop={true}
+          centerMode={true}
+          centerSlidePercentage={35}
+          emulateTouch={false}
+          interval={3000}
+          autoPlay={false}
+          selectedItem={8}
+        >
+          {data &&
+            data.map((item, index) => (
+              <Link to={"/deadend"} key={index}>
+                <div className="individual-card">
+                  <img
+                    src={item}
+                    alt="language"
+                    style={{ borderRadius: "5px", width: "100%" }}
+                  />
+                </div>
+              </Link>
+            ))}
+        </Carousel>
+      ) : (
+        <Carousel
+          className="language-carousel"
+          showArrows={true}
+          showStatus={false}
+          showThumbs={false}
+          infiniteLoop={true}
+          centerMode={true}
+          centerSlidePercentage={20}
+          emulateTouch={false}
+          interval={3000}
+          autoPlay={false}
+          selectedItem={8}
+        >
+          {data &&
+            data.map((item, index) => (
+              <Link to={"/deadend"} key={index}>
+                <div className="individual-card">
+                  <img
+                    src={item}
+                    alt="language"
+                    style={{ borderRadius: "5px", width: "100%" }}
+                  />
+                </div>
+              </Link>
+            ))}
+        </Carousel>
+      )}
     </div>
   );
 }
