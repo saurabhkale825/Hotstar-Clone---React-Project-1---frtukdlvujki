@@ -25,8 +25,8 @@
 }
 
 .hero-section-mobile-img{
-    position: relative;
-    top:20%;
+    position: absolute;
+    top:20vh;
     left: 10%;
     max-width:15vw;
     height: auto;
@@ -68,7 +68,7 @@
 }
 
 .watch-now-mobile{
-    position: relative;
+    position: absolute;
     top:25vh ;
     left: 8%;
     width: 20vw;
