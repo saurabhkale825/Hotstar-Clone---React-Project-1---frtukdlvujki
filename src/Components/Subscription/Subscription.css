@@ -1,27 +1,25 @@
 .subscription {
-   width: 100vw;
-   height: 100vh;
-   background-color: black;
+  width: 100vw;
+  min-height: 60vh;
+  background-color: black;
 }
 
-.subscription-heading{
-  /* position: -webkit-sticky; */
+.subscription-heading {
   position: sticky;
   top: 0%;
   left: 0%;
   width: 100vw;
-  height: 12vh;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: black;
   z-index: 999;
-  padding: calc(0.01*100vh) 0px;
-  border: 1px solid white;
+  border-bottom: 1px solid rgb(65, 66, 63);
 }
 
 .left-section {
-  width: 30%;
+  width: 30vw;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -37,7 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2vh;
+  /* margin-top: 2vh; */
 }
 
 .logo-section {
@@ -51,45 +49,61 @@
 /* CSS for right-section when user is unloged in */
 .right-section-unloged {
   width: 40vw;
-  height: 100%;
-  margin-right: 4%;
+  height: 10vh;
+  margin-right: 4vw;
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-items: center;
-  gap: 10%;
-  padding: 0 calc(0.01*100vw);
-  border: 1px solid white;
+  gap: 3vw;
+  padding: 0 calc(0.01 * 100vw);
+}
+
+.right-section-loged {
+  width: 40vw;
+  height: 10vh;
+  margin-right: 4vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3vw;
 }
 
 .language-dropdown {
-  width: 100%; /* Change width to 100% */
-  max-width: 200px; /* Limit the maximum width to 200px */
-  height: auto; /* Allow height to adjust based on content */
+  width: 15vw;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: medium; /* Adjust font size for smaller screens */
+  font-size: medium;
   font-weight: 700;
-  margin-left: auto; /* Move the dropdown to the right on smaller screens */
-  margin-right: auto; /* Move the dropdown to the right on smaller screens */
+  
 }
 
-#languages {
-  width: 100%; /* Make the dropdown width 100% */
-  max-width: 200px; /* Limit the maximum width to 200px */
-  height: 40px; /* Set a fixed height for the dropdown */
+.languages {
+  width: 12vw;
+  height: 8vh;
   color: white;
-  border-radius: 10px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+  background-color: #1010109b;
+  border: 1px solid white;
+}
+
+#languages{
+  width: 12vw;
+  height: 5vh;
+  color: white;
+  border-radius: 6px;
   border: none;
   text-align: center;
   background-color: #4848509b;
 }
 
-
 .Login-btn {
   width: 120px;
-  height: 50px;
+  height: 7vh;
   margin-right: 5%;
   color: white;
   border-radius: 10px;
@@ -106,8 +120,7 @@
 
 .mobile-Login-btn {
   width: 15vw;
-  height: 30px;
-  /* margin-right: 5%; */
+  height: 5vh;
   color: white;
   border-radius: 10px;
   font-size: x-small;
@@ -118,18 +131,6 @@
   background-image: linear-gradient(100deg, #3c63b0, #03307e);
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-
-
-/* CSS for right-section when user is loged in */
-.right-section-loged {
-  width: 30%;
-  height: 18vh;
-  margin-right: 5%;
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 

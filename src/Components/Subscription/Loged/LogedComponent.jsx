@@ -1,15 +1,19 @@
-import React from "react";
+import {useContext} from "react";
 import "./LogedComponent.css";
 import { Icon } from "semantic-ui-react";
 import Footer from "../../NavBar/Footer";
 import Check from "../../../Assets/Images/check.png";
 import { Link } from "react-router-dom";
+import AuthContext from "../../../Context/AuthContext";
 
 function LogedComponent() {
+
+  const {mobile} = useContext(AuthContext);
+
   return (
     <>
-      <div className="login-component">
-        <div className="login-left-section">
+      <div className={mobile ? "mobile-login-component" : "login-component"}>
+        {mobile ? null : <div className="login-left-section">
           <h4>You're subscribed to the Premium plan. Keep streaming!</h4>
 
           <div className="login-left-section-content">
@@ -38,9 +42,9 @@ function LogedComponent() {
               </li>
             </ul>
           </div>
-        </div>
+        </div>}
 
-        <div className="login-right-section">
+        <div className={mobile ? "mobile-login-right-section" : "login-right-section"}>
           <div className="login-right-section-content">
             <div className="login-right-section-content-toprow">
               <div className="grid">
@@ -112,9 +116,9 @@ function LogedComponent() {
                 <span className="price">1499</span>
                 <span className="year">/Year</span>
               </div>
-              <div className="blue-tick">
+              {/* <div className="blue-tick">
                 <img src={Check}></img>
-              </div>
+              </div> */}
             </button>
           </div>
 

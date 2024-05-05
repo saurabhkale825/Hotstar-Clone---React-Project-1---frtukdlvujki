@@ -13,6 +13,7 @@ import StarWarVideo from "../../../Assets/Video/StarWarsVideo.mp4";
 import NationalGeographicVideo from "../../../Assets/Video/NationalGeographicVideo.mp4";
 import HotstarSpecialVideo from "../../../Assets/Video/HotstarSpecialVideo.mp4";
 import AuthContext from "../../../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 function SpecialCarousel() {
   const [isHover, setIsHover] = useState(false);
@@ -33,12 +34,14 @@ function SpecialCarousel() {
 
   return (
     <div className={mobile ? "special-mobile-carousel" :"special-carousel"}>
+      
       <div className={mobile ? "individual-mobile-category" : "individual-category" }>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image1")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image1") ? (
+          {((isHover === true && !mobile ) && divId.id === "image1") ? (
             <video
               src={DisneyVideo}
               autoPlay
@@ -47,14 +50,17 @@ function SpecialCarousel() {
             <img src={DisneyLogo} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
       
+      
       <div className={mobile ? "individual-mobile-category" : "individual-category"}>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image2")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image2") ? (
+          {((isHover === true && !mobile ) && divId.id === "image2") ? (
             <video
               src={PixarVideo}
               autoPlay
@@ -63,14 +69,19 @@ function SpecialCarousel() {
             <img src={Pixar} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
+      
 
+
+      
       <div className={mobile ? "individual-mobile-category" : "individual-category"}>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image3")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image3") ? (
+          {((isHover === true && !mobile ) && divId.id === "image3") ? (
             <video
               src={MarvelVideo}
               autoPlay
@@ -79,14 +90,18 @@ function SpecialCarousel() {
             <img src={Marvel} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
+    
 
+      
       <div className={mobile ? "individual-mobile-category" : "individual-category"}>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image4")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image4") ? (
+          {((isHover === true && !mobile ) && divId.id === "image4") ? (
             <video
               src={StarWarVideo}
               autoPlay
@@ -95,14 +110,19 @@ function SpecialCarousel() {
             <img src={StarWars} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
+     
+
+      
 
       <div className={mobile ? "individual-mobile-category" : "individual-category"}>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image5")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image5") ? (
+          {((isHover === true && !mobile ) && divId.id === "image5") ? (
             <video
               src={NationalGeographicVideo}
               autoPlay
@@ -111,14 +131,18 @@ function SpecialCarousel() {
             <img src={NationalGeographic} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
 
+      
+      
       <div className={mobile ? "individual-mobile-category" : "individual-category"}>
+      <Link to={"/deadend"}>
         <div
           onMouseOver={() => handleMouseOver("image6")}
           onMouseOut={handleMouseOut}
         >
-          {(isHover === true && divId.id === "image6") ? (
+          {((isHover === true  && !mobile )&& divId.id === "image6" ) ? (
             <video
               src={HotstarSpecialVideo}
               autoPlay
@@ -127,7 +151,9 @@ function SpecialCarousel() {
             <img src={HotstarSpecial} alt="disney" />
           )}
         </div>
+        </Link>
       </div>
+     
     </div>
   );
 }

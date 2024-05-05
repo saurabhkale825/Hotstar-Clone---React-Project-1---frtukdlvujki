@@ -8,7 +8,6 @@ import GetVideo from "../AllDetailsPage/GetVideo";
 import SignUp from "../SignUp/SignUp";
 import Login from "../Login/Login";
 import Subscription from "../Subscription/Subscription";
-import DeadEndPage from "./Pages/DeadEndPage";
 import User from "../User/User";
 import SearchPage from "./Pages/SearchPage";
 import TvShowPage from "./Pages/TvShowPage";
@@ -16,6 +15,7 @@ import WatchList from "../WatchList/WatchList";
 import AllContent from "../AllContent/AllContent";
 import EditProfilePage from "../NavBar/Pages/EditProfilePage";
 import PaymentPage from "../PaymentPage/PaymentPage";
+import ComingSoonPage from "../ComingSoon/ComingSoon";
 
 
 
@@ -73,13 +73,12 @@ function MainNavigation() {
             <Route path="/details/:itemId" element={login? <Details/> : <User/>} />
             <Route path="/gettingvideo/:video_url" element={<GetVideo />} />
             <Route path="/subscription" element={<Subscription />} />
-            <Route path="/deadend" element={<DeadEndPage />} />
             <Route path="/user" element={<User />} />
             <Route path="/search" element={login ? <SearchPage /> : <User/>} />
             <Route path="/watchlist" element={login ? <WatchList/> : <User/>} />
             <Route path="/allcontent/:type" element={<AllContent />} />
             <Route path="/payment" element={<PaymentPage />} />
-            {/* <Route path="/editprofile" element={<ProtectedRoute component={EditProfilePage} />} /> */}
+            <Route path="/deadend" element={<ComingSoonPage />} />
           </Routes>
         </Router>
       </AuthContext.Provider>
