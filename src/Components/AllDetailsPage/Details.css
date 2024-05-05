@@ -15,7 +15,8 @@
 
 .mobile-details-page-bg{
   width: 100%;
-  height: 60%;
+  height: 55vh;
+  /* border: 1px solid white; */
 }
 
 .movie-title {
@@ -35,11 +36,14 @@
 
 .mobile-movie-title{
   position : relative;
-  top: 5vh;
+  top: 1vh;
   left: 5vw;
   width: 90vw;
+  height: 10vh;
   text-align: center;
-  font-size: 10vw;
+  font-size: 4vh;
+  line-height: 5vh;
+  /* border: 1px solid white; */
 }
 
 .movie-description {
@@ -66,7 +70,7 @@
 }
 .mobile-rigid-content{
   position: relative;
-  top: 10vh;
+  top: 2vh;
   left: 5vw;
   width: 90vw;
   text-align: center;
@@ -74,6 +78,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  /* border: 1px solid white; */
 }
 
 .dots {
@@ -102,14 +107,15 @@
 
 .mobile-keywords{
   position: relative;
-  top: 12vh;
+  top: 3vh;
   left: 5vw;
   width: 90vw;
   text-align: center;
   display: flex;
   justify-content: center;
   gap: 0 8vw;
-  font-size: 3vw;
+  font-size: max(3vh,3vw);
+  /* border: 1px solid white; */
 
 }
 
@@ -125,14 +131,12 @@
 
 .mobile-btn-group{
   position: relative;
-  top: 15vh;
+  top: 5vh;
   left: 25vw;
   width: 50vw;
   height: 8vh;
   display: flex;
   justify-content: center;
-  /* border: 1px solid white; */
-  gap: 0 1vw;
 }
 .link-div {
   width: 80%;
@@ -149,6 +153,7 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 10px;
+
 }
 
 .mobile-watch-btn{
@@ -157,12 +162,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2vw;
+  /* gap: 1vw; */
   font-size: 4vw;
   font-weight: 400;
   cursor: pointer;
   border-radius: 10px;
-  /* border: 1px solid white; */
+  background-color: rgba(128, 128, 128, 0.489);
+  color: white;
+  border: none;
 }
 .watch-btn button {
   width: 100%;

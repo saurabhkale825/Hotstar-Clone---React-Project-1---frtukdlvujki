@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./Details.css";
 import { Icon } from "semantic-ui-react";
-import PlayIcon from "../../Assets/Images/play.png";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { toast } from "react-toastify";
 import AuthContext from "../../Context/AuthContext";
 import Sidebar from "../NavBar/Sidebar";
@@ -69,7 +69,7 @@ function Details() {
             style={{
               backgroundImage: `linear-gradient( to top, #000 0%, transparent 58% ),url(${data.thumbnail})`,
               backgroundSize: "cover",
-              objectFit: "cover",
+              // objectFit: "cover",
             }}
           ></div>
         ) : (
@@ -123,7 +123,7 @@ function Details() {
           <div className="link-div">
             <Link to={`/gettingvideo/${encodeURIComponent(data.video_url)}`}>
               <button className={mobile ? "mobile-watch-btn" : "watch-btn"}>
-                <img src={PlayIcon} alt="logo" width="8%" height="40%" />
+                <ArrowRightIcon sx={{ fontSize: 30 }} />
                 <p>Watch Now</p>
               </button>
             </Link>
