@@ -12,6 +12,7 @@
   margin-left: 5%;
   display: flex;
   padding-bottom: 10%;
+  justify-content: space-between;
 }
 
 .mobile-payment-container {

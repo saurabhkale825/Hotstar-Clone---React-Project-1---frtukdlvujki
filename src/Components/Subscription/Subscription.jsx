@@ -7,7 +7,7 @@ import AuthContext from "../../Context/AuthContext";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Subscription() {
-  const { login, setLogin, mobile } = useContext(AuthContext);
+  const { login, setLogin, mobile , subscribe } = useContext(AuthContext);
 
   return (
     <>
@@ -62,7 +62,7 @@ function Subscription() {
           </div>
         </div>
 
-        <div>{login ? <LogedComponent /> : <UnlogedComponent />}</div>
+        <div>{(login && subscribe) ? <LogedComponent /> : <UnlogedComponent />}</div>
       </div>
     </>
   );

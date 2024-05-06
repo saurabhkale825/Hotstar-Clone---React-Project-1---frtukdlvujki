@@ -116,9 +116,6 @@ function LogedComponent() {
                 <span className="price">1499</span>
                 <span className="year">/Year</span>
               </div>
-              {/* <div className="blue-tick">
-                <img src={Check}></img>
-              </div> */}
             </button>
           </div>
 

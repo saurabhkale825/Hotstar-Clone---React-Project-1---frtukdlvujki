@@ -23,6 +23,7 @@ import ComingSoonPage from "../ComingSoon/ComingSoon";
 function MainNavigation() {
   const [login, setLogin] = useState(false);
   const [mobile , setMobile] = useState(false);
+  const [subscribe , setSubscribe] = useState(false);
 
   const loginValue = JSON.parse(localStorage.getItem("user-info"));
   useEffect(() => {
@@ -60,7 +61,9 @@ function MainNavigation() {
         value={{
           login,
           setLogin,
-          mobile
+          mobile,
+          subscribe,
+          setSubscribe
         }}
       >
         <Router>

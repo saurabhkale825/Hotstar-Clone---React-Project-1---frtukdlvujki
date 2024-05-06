@@ -11,7 +11,7 @@ function PaymentPage() {
   const [upi, setUpi] = useState("");
   const [validUPI, setValidUPI] = useState(false);
   const Navigate = useNavigate();
-  const { mobile, login } = useContext(AuthContext);
+  const { mobile, login ,subscribe , setSubscribe} = useContext(AuthContext);
 
   const handleUpiChange = (e) => {
     setUpi(e.target.value);
@@ -19,6 +19,7 @@ function PaymentPage() {
 
   const handleSubmit = () => {
     toast.success("Subscription successfully pursched");
+    setSubscribe(true);
     Navigate("/");
   };
 
@@ -30,11 +31,14 @@ function PaymentPage() {
     isValidUPI();
   }, [upi]);
 
-  // useEffect(() => {
-  //   if(login === false){
-  //     Navigate("/login");
-  //   }
-  // }, []);
+  useEffect(() => {
+    // if(login === false){
+    //   Navigate("/login");
+    // }
+     if(login && subscribe){
+      Navigate("/")
+    }
+  }, []);
 
   return (
     <div className="payment-page">
