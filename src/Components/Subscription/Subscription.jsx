@@ -53,11 +53,12 @@ function Subscription() {
               </div>
             ) : null}
 
-            <Link to={"/login"}>
+            {login ? null
+            :<Link to={"/login"}>
               <div className={mobile ? "mobile-Login-btn" : "Login-btn"}>
                 Login
               </div>
-            </Link>
+            </Link>}
           </div>
         </div>
 
