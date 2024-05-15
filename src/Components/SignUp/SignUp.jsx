@@ -84,6 +84,7 @@ function SignUp() {
             autoComplete="false"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            minLength="5"
           ></input>
 
           <div className="signup-submit-btn">

@@ -79,3 +79,18 @@
   text-align: center;
   margin-left: 5%;
 }
+
+.empty-watchlist{
+  border: 1px solid white;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 8px;
+  font-size: 1vw;
+  position: relative;
+  top: 5vh;
+  left: 12vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
