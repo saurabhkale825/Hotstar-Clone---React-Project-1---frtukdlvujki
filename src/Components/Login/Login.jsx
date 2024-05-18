@@ -48,7 +48,7 @@ function Login() {
 
   return (
     <div className="login-page-bg">
-      <div className="login-page">
+      <div className={mobile ? "mobile-login-page" : "login-page"}>
         {mobile ? null : <div className="login-page-left-section">
           {/* <div></div> */}
         </div>}
@@ -59,7 +59,7 @@ function Login() {
           </Link>
 
           <div className="login-page-text-content">
-            <h3>Log in or sign up to continue</h3>
+            <h3>Log in to continue</h3>
 
             <div className="login-page-password-display">Enter Email</div>
             <div className="login-page-password">

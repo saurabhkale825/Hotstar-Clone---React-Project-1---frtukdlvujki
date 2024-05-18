@@ -53,6 +53,10 @@ function MainNavigation() {
     };
   }, []);
 
+  useEffect(() => {
+    sessionStorage.setItem("subscribe" , subscribe)
+  },[subscribe])
+
 
   
   return (

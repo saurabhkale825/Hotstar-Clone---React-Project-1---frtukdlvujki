@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Subscription.css";
 import { Link } from "react-router-dom";
 import UnlogedComponent from "./UnLoged/UnlogedComponent";
@@ -7,7 +7,9 @@ import AuthContext from "../../Context/AuthContext";
 import CloseIcon from "@mui/icons-material/Close";
 
 function Subscription() {
-  const { login, setLogin, mobile , subscribe } = useContext(AuthContext);
+  const { login, mobile  } = useContext(AuthContext);
+  const userSubscribe = sessionStorage.getItem("subscribe");
+  
 
   return (
     <>
@@ -62,7 +64,7 @@ function Subscription() {
           </div>
         </div>
 
-        <div>{(login && subscribe) ? <LogedComponent /> : <UnlogedComponent />}</div>
+        <div>{(login && userSubscribe) ? <LogedComponent /> : <UnlogedComponent />}</div>
       </div>
     </>
   );

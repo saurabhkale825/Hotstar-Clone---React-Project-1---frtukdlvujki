@@ -1,15 +1,19 @@
-.letest-release {
-  width: 90vw;
-  position: relative;
-  left: 8%;
-  margin-top: calc(0.04 * 100vh);
-}
-.letest-mobile-release {
-  width: 90vw;
-  position: relative;
-  left: 8%;
-  margin: calc(0.01 * 80vh) 0 calc(0.1 * 50vh) 0;
-}
+  .letest-release {
+    width: 90vw;
+    height: 40vh;
+    position: relative;
+    left: 8%;
+    margin-top: calc(0.04 * 100vh);
+    overflow: visible; /* Allow overflow */
+  }
+  
+  .letest-mobile-release {
+    width: 90vw;
+    position: relative;
+    left: 8%;
+    margin: calc(0.01 * 80vh) 0 calc(0.1 * 50vh) 0;
+    overflow: visible; /* Allow overflow */
+  }
 
 .heading {
   text-align: center;
@@ -57,6 +61,7 @@
   align-items: center;
   justify-content: center;
   margin-top: calc(0.01 * 100vh);
+  overflow: visible;
 }
 
 .mobile-potraitcarousal {
@@ -69,6 +74,7 @@
   align-items: center;
   justify-content: center;
   margin-top: calc(0.01 * 100vh);
+  overflow: visible;
 }
 
 .control-dots {

@@ -13,14 +13,14 @@ function PaymentPage() {
   const Navigate = useNavigate();
   const { mobile, login ,subscribe , setSubscribe} = useContext(AuthContext);
 
+  const userSubscribe = sessionStorage.getItem("subscribe");
+  useEffect(() => {
+    setSubscribe(userSubscribe);
+    console.log(userSubscribe);
+  },[]);
+
   const handleUpiChange = (e) => {
     setUpi(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    toast.success("Subscription successfully pursched");
-    setSubscribe(true);
-    Navigate("/");
   };
 
   useEffect(() => {
@@ -32,13 +32,18 @@ function PaymentPage() {
   }, [upi]);
 
   useEffect(() => {
-    // if(login === false){
-    //   Navigate("/login");
-    // }
      if(login && subscribe){
       Navigate("/")
     }
-  }, []);
+  }, [])
+  
+  const handleSubmit = () => { 
+    toast.success("Subscription successfully pursched");
+    setSubscribe(true);
+    Navigate("/");
+  };
+
+  
 
   return (
     <div className="payment-page">
@@ -112,6 +117,7 @@ function PaymentPage() {
                       ? "payment-page-verify-btn"
                       : "payment-page-verify-btn disabled"
                   }
+                  disabled={validUPI === true ? false : true}
                   onClick={handleSubmit}
                 >
                   Verify and Pay

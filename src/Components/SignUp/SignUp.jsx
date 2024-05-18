@@ -1,10 +1,13 @@
-import { useState } from "react";
+import {useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import Cancel from "../../Assets/Images/Login-Cancel.png";
+import AuthContext from "../../Context/AuthContext";
 import { toast } from "react-toastify";
+import CloseIcon from '@mui/icons-material/Close';
+
 
 function SignUp() {
+  const { setLogin , mobile} = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,38 +51,38 @@ function SignUp() {
   }
   return (
     <div className="signup-bg">
-      <div className="signup-page">
-        <div className="signup-page-left-section"></div>
+      <div className={mobile  ? "mobile-signup-page" : "signup-page"}>
+        <div className={mobile ? null : "signup-page-left-section"}></div>
 
-        <div className="signup-page-right-section">
-          <button>
+        <div className={mobile ? "mobile-signup-page-right-section": "signup-page-right-section"}>
+          <button >
             <Link to={"/user"}>
-              <img src={Cancel} alt="cancel" style={{ width: "35px" }} />
+              <CloseIcon sx={{fontSize : 35}} />
             </Link>
           </button>
           <h2>Signup to continue</h2>
 
-          <div className="signup-page-display-text">Enter Name</div>
+          <div className={mobile? "mobile-signup-page-display-text" : "signup-page-display-text"}>Enter Name</div>
           <input
-            className="signup-page-input"
+            className={mobile ? "mobile-signup-page-input" : "signup-page-input"}
             type="text"
             autoComplete="false"
             onChange={(e) => setName(e.target.value)}
             value={name}
           ></input>
 
-          <div className="signup-page-display-text">Enter Email</div>
+          <div className={mobile? "mobile-signup-page-display-text" : "signup-page-display-text"}>Enter Email</div>
           <input
-            className="signup-page-input"
+            className={mobile ? "mobile-signup-page-input" : "signup-page-input"}
             type="email"
             autoComplete="false"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           ></input>
 
-          <div className="signup-page-display-text">Enter Password</div>
+          <div className={mobile? "mobile-signup-page-display-text" : "signup-page-display-text"}>Enter Password</div>
           <input
-            className="signup-page-input"
+            className={mobile ? "mobile-signup-page-input" : "signup-page-input"}
             type="password"
             autoComplete="false"
             onChange={(e) => setPassword(e.target.value)}
@@ -87,7 +90,7 @@ function SignUp() {
             minLength="5"
           ></input>
 
-          <div className="signup-submit-btn">
+          <div className={mobile ? "mobile-signup-submit-btn" : "signup-submit-btn"}>
             <button onClick={UserSingUp}>Signup</button>
           </div>
         </div>

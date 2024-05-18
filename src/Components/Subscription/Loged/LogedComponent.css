@@ -19,7 +19,7 @@
   top: 10vh;
   left: 0%;
   width: 100vw;
-  min-height: 120vh;
+  min-height: 100vh;
   background-color: black;
   display: flex;
   justify-content: space-around;
@@ -171,10 +171,14 @@
   background: #252833;
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .continue-watching-text {
   font-size: 18px;
   font-weight: 600;
   line-height: 28px;
+
 }
