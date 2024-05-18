@@ -50,7 +50,6 @@ function Login() {
     <div className="login-page-bg">
       <div className={mobile ? "mobile-login-page" : "login-page"}>
         {mobile ? null : <div className="login-page-left-section">
-          {/* <div></div> */}
         </div>}
 
         <div className={mobile ? "mobile-login-page-right-section" : "login-page-right-section"}>
@@ -58,14 +57,14 @@ function Login() {
             <CloseIcon className={mobile ? "mobile-login-page-right-section-back-button"  : "login-page-right-section-back-button" }/>
           </Link>
 
-          <div className="login-page-text-content">
+          <div className={mobile  ? "mobile-login-page-text-content" : "login-page-text-content"}>
             <h3>Log in to continue</h3>
 
-            <div className="login-page-password-display">Enter Email</div>
-            <div className="login-page-password">
+            <div className={mobile ? "mobile-login-page-password-display" : "login-page-password-display"}>Enter Email</div>
+            <div className={mobile ? "mobile-login-page-password" : "login-page-password"}>
               <input
                 type="email"
-                className="login-page-password-input"
+                className={mobile ? "mobile-login-page-password-input" : "login-page-password-input"}
                 autoComplete="false"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -73,24 +72,24 @@ function Login() {
             </div>
 
            
-            <div className="login-page-password-display">Enter Password</div>
-            <div className="login-page-password">
+            <div className={mobile ? "mobile-login-page-password-display" : "login-page-password-display"}>Enter Password</div>
+            <div className={mobile ? "mobile-login-page-password" : "login-page-password"}>
               <input
                 type="password"
-                className="login-page-password-input"
+                className={mobile ? "mobile-login-page-password-input" : "login-page-password-input"}
                 autoComplete="false"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
               ></input>
             </div>
 
-            <div className="login-page-fix-content">
+            <div className={mobile ? "mobile-login-page-fix-content" : "login-page-fix-content"}>
               By proceeding you confirm that you are above 18 years of age and
               agree to the & Privacy Policy & Terms of Use.
             </div>
           </div>
 
-          <div className="login-submit-btn">
+          <div className={mobile ? "mobile-login-submit-btn" : "login-submit-btn"}>
             <button onClick={Login}>Login</button>
           </div>
 

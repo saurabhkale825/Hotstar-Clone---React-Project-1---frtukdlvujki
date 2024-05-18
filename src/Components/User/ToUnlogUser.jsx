@@ -18,8 +18,8 @@ function ToUnlogUser() {
   console.log(userName);
 
   return (
-    <div className="unloged-user">
-      <div className="unloged-user-header">
+    <div className={mobile ? "mobile-unloged-user" : "unloged-user"}>
+      <div className={mobile ? "mobile-unloged-user-header" : "unloged-user-header"}>
         <div className={mobile ? "mobile-unloged-user-header-left" : "unloged-user-header-left"}>
          <div>
           <span>Disney+ Hotstar Premium</span>
@@ -71,7 +71,7 @@ function ToUnlogUser() {
       </div>
 
       <Link to={"/watchlist"}>
-        <div className="watchlist-link">WatchList</div>
+        <div className={mobile ? "mobile-watchlist-link" : "watchlist-link"}>WatchList</div>
       </Link>
     </div>
   );
