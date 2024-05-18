@@ -10,7 +10,7 @@ import AuthContext from '../../Context/AuthContext'
 
 function User() {
 
-  const{login} = useContext(AuthContext);
+  const{login , mobile} = useContext(AuthContext);
   
 
   return (
@@ -24,7 +24,7 @@ function User() {
     </div>
     </Link>
     </div>
-    <Footer />
+    {mobile ? null :<Footer/> }
     </>
   )
 }

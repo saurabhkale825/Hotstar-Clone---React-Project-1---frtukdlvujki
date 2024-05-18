@@ -7,9 +7,10 @@
 }
 
 .main-mobile-footer{
-    width: 90vw;
+    width: 100vw;
     margin-top: 4vh;
-    margin-left: 8%;
+    margin-left: 0%;
+    padding-bottom: 15vh;
     color: white;
     background-color: transparent;
 }
@@ -17,7 +18,15 @@
 .footer{
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.mobile-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .footer div{
@@ -27,12 +36,30 @@
     font-weight: 300;
 }
 
+.mobile-company, .mobile-need-help , .mobile-connect-with-us{
+    width: 20%;
+    font-size: 10px;
+}
+
+.mobile-view-website-in{
+    width: 25%;
+    font-size: 10px;
+}
+
+
+
+
 .footer-support{
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
 }
 
+.mobile-footer-support{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
 .left{
     display: block;
     width: 50%;
