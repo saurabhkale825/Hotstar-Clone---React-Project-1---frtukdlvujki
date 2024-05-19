@@ -11,10 +11,12 @@ function LoginUser() {
     <div className={mobile ? "mobile-loginuser" : "loginuser"}>
       <div className={mobile ? "mobile-help-and-support-btn": "help-and-support-btn"}>
         <button>
+          <Link to={"/error"}>
           <span>
-            <Icon name="question circle outline" size="large"></Icon>
+            <Icon name="question circle outline" size="large" className="white"></Icon>
           </span>
-          <span>Help & Support</span>
+          <span className="white">Help & Support</span>
+          </Link>
         </button>
       </div>
 

@@ -15,6 +15,7 @@ import WatchList from "../WatchList/WatchList";
 import AllContent from "../AllContent/AllContent";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import ComingSoonPage from "../ComingSoon/ComingSoon";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 
 
@@ -85,6 +86,7 @@ function MainNavigation() {
             <Route path="/allcontent/:type" element={<AllContent />} />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/deadend" element={<ComingSoonPage />} />
+            <Route path="/error" element={<ErrorPage />} />
           </Routes>
         </Router>
       </AuthContext.Provider>

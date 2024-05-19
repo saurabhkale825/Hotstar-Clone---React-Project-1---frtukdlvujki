@@ -52,7 +52,7 @@ function SearchPage() {
     <>
       <Sidebar />
       <div className={mobile ? "mobile-searchpage" : "searchpage"}>
-        <div className="searchpage-content">
+        <div className={mobile ? "mobile-searchpage-content": "searchpage-content"}>
           <div className="searchpage-icon">
             {" "}
             <img src={SearchIcon} alt="search-icon" width="30px" />
