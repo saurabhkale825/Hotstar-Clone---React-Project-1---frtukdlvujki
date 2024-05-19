@@ -16,7 +16,7 @@ function ErrorPage() {
             </div>
             <div className={mobile ? 'mobile-error-page-button':'error-page-button'}>
             <Link to={"/"}>
-                <p className='error-page-back-text'>Go To Homepage</p>
+                <p className={mobile ? 'mobile-error-page-back-text' : 'error-page-back-text'}>Go To Homepage</p>
             </Link>
             </div>
             
