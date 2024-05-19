@@ -13,10 +13,8 @@ import SearchPage from "./Pages/SearchPage";
 import TvShowPage from "./Pages/TvShowPage";
 import WatchList from "../WatchList/WatchList";
 import AllContent from "../AllContent/AllContent";
-import EditProfilePage from "../NavBar/Pages/EditProfilePage";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import ComingSoonPage from "../ComingSoon/ComingSoon";
-
 
 
 
@@ -71,6 +69,7 @@ function MainNavigation() {
         }}
       >
         <Router>
+          
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />
