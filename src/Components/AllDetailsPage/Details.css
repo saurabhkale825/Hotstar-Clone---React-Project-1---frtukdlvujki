@@ -11,11 +11,11 @@
 .movie-title {
   position: fixed;
   top: 25%;
-  left: 10%;
+  left: 9%;
   color: white;
-  width: 30%;
+  width: 70%;
   height: 20%;
-  font-size: 60px;
+  font-size: 40px;
   inline-size: auto;
   font-weight: 700;
   text-align: center;
