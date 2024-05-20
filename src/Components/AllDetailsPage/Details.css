@@ -45,12 +45,6 @@
   font-weight: 500;
   gap: 10px;
 }
-
-.dots {
-  position: absolute;
-  bottom: 30%;
-}
-
 .u-a {
   background-color: rgba(6, 6, 6, 0);
   padding: 2px;

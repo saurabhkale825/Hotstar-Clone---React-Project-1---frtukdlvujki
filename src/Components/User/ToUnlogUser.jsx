@@ -19,13 +19,23 @@ function ToUnlogUser() {
 
   return (
     <div className={mobile ? "mobile-unloged-user" : "unloged-user"}>
-      <div className={mobile ? "mobile-unloged-user-header" : "unloged-user-header"}>
-        <div className={mobile ? "mobile-unloged-user-header-left" : "unloged-user-header-left"}>
-         <div>
-          <span>Disney+ Hotstar Premium</span>
-          <span>
-            <Icon name="angle right" size="small" />
-          </span>
+      <div
+        className={
+          mobile ? "mobile-unloged-user-header" : "unloged-user-header"
+        }
+      >
+        <div
+          className={
+            mobile
+              ? "mobile-unloged-user-header-left"
+              : "unloged-user-header-left"
+          }
+        >
+          <div>
+            <span>Disney+ Hotstar Premium</span>
+            <span>
+              <Icon name="angle right" size="small" />
+            </span>
           </div>
 
           <p>+91 9********0</p>
@@ -37,7 +47,9 @@ function ToUnlogUser() {
       </div>
 
       <div className="sinle-line"></div>
-      <div className={mobile ? "mobile-userlogin-profile" : "userlogin-profile"}>
+      <div
+        className={mobile ? "mobile-userlogin-profile" : "userlogin-profile"}
+      >
         <h3>Profiles</h3>
         <div className="user-profile-section">
           <div>
@@ -51,27 +63,33 @@ function ToUnlogUser() {
           </div>
 
           <div>
-            <img
-              src="https://img1.hotstarext.com/image/upload/w_200,h_200,c_fill/feature/profile/19.png"
-              alt="kids-logo"
-            />
+            <Link to={"/error"}>
+              <img
+                src="https://img1.hotstarext.com/image/upload/w_200,h_200,c_fill/feature/profile/19.png"
+                alt="kids-logo"
+              />
 
-            <p>Kids</p>
+              <p>Kids</p>
+            </Link>
           </div>
 
           <div>
-            <img
-              src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-add-icon-png-image_998225.jpg"
-              alt="add"
-              className="add-image"
-            ></img>
-            <p>Add</p>
+            <Link to={"/error"}>
+              <img
+                src="https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-vector-add-icon-png-image_998225.jpg"
+                alt="add"
+                className="add-image"
+              ></img>
+              <p>Add</p>
+            </Link>
           </div>
         </div>
       </div>
 
       <Link to={"/watchlist"}>
-        <div className={mobile ? "mobile-watchlist-link" : "watchlist-link"}>WatchList</div>
+        <div className={mobile ? "mobile-watchlist-link" : "watchlist-link"}>
+          WatchList
+        </div>
       </Link>
     </div>
   );

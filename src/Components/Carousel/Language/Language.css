@@ -14,7 +14,7 @@
   height: 15vh;
   position: relative;
   left: 8%;
-  margin-top: calc(0.01 * 100vh);
+  margin: 2vh 0;
 }
 
 .lanaguage-carousel {
@@ -32,6 +32,12 @@
   margin: 0px 10px;
   cursor: pointer;
   height: 100%;
+}
+
+.mobile-individual-card{
+  margin: 0 5px;
+  cursor: pointer;
+  height: 15vh;
 }
 
 .individual-card  img{

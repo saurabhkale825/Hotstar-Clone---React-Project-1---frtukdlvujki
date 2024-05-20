@@ -45,15 +45,17 @@ function Language() {
         >
           {data &&
             data.map((item, index) => (
-              <Link to={"/deadend"} key={index}>
-                <div className="individual-card">
+              
+                <div className="mobile-individual-card" key={index}>
+                  <Link to={"/deadend"} >
                   <img
                     src={item}
                     alt="language"
                     style={{ borderRadius: "5px", width: "100%" }}
                   />
+                   </Link>
                 </div>
-              </Link>
+             
             ))}
         </Carousel>
       ) : (

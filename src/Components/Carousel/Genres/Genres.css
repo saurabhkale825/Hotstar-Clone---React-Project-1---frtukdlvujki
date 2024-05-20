@@ -13,10 +13,12 @@
   height: 15vh;
   position: relative;
   left: 8%;
-  margin-top: calc(0.01 * 100vh);
+  margin: 2vh 0;
+  display: flex;
+  align-items: center;
 }
 .genres-carousel {
-  height: 90%;
+  height: 100%;
   width: 100%;
   background-color: transparent;
   color: white;
@@ -32,12 +34,24 @@
   height: 100%;
 }
 
+.mobile-individual-card{
+  margin: 0 5px;
+  cursor: pointer;
+  height: 15vh;
+}
+
+.mobile-individual-card img{
+  width: 100%;
+  height: 100%;
+}
+
+
 .individual-card  img{
   height: 100%;
 }
 
 .individual-card:hover {
-  transform: scale(1.18);
+  transform: scale(1.15);
   transition: 0.3s ease;
   z-index: 999;
 }

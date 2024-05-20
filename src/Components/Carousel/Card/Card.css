@@ -13,12 +13,12 @@
   .card:hover {
     border: 1px solid red;
     position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 220px; /* Adjust width if necessary */
-    height: 260px; /* Adjust height if necessary */
+    top: 0%;
+    left: 0%;
+    width: 250px;
+    height: 200px; 
     z-index: 10;
     overflow: visible;
-    transform: scale(1.2); /* Smooth transition */
-    transition: transform 0.3s ease;
+    /* transform: scale(1.2); /* Smooth transition */
+    /*transition: transform 0.3s ease; */
   }

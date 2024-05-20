@@ -5,17 +5,16 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import AuthContext from "../../../Context/AuthContext";
-import Card from "../Card/Card";
 
-function LatestRelease() {
+function ShortFlimCarousel() {
   const filterType = "movie";
-  const { mobile } = useContext(AuthContext);
   const [data] = useFetch(filterType);
+  const { mobile } = useContext(AuthContext);
 
   return (
     <div className={mobile ? "letest-mobile-release" : "letest-release"}>
       <div className="heading">
-        <p className="heading-title">Movies</p>
+        <p className="heading-title">{filterType}</p>
         <Link to={`/allcontent/${filterType}`}>
           <div className="heading-button">
             <p>View All {">"}</p>
@@ -44,7 +43,7 @@ function LatestRelease() {
                   <img
                     src={item.thumbnail}
                     alt={item.id}
-                    style={{ borderRadius: "5px" }}
+                    className="indi-mobile-img"
                   />
                 </div>
               </Link>
@@ -70,18 +69,28 @@ function LatestRelease() {
           {data?.length > 0 ? (
             data?.map((item) => (
               <Link to={`/details/${item._id}`} key={item._id}>
-                {/* <div
-                  className={
-                    mobile ? "individual-mobile-show" : "individual-show"
-                  }
-                >
+                <div className="individual-show">
+                  {console.log("item=>", item)}
                   <img
                     src={item.thumbnail}
                     alt={item.id}
-                    style={{ borderRadius: "5px" }}
+                    className="indi-img"
                   />
-                </div> */}
-                <Card card={item} />
+
+                  <div className="indi-text-content">
+                    <div>
+                      <button className="indi-show-home-watch-now">
+                        Watch Now
+                      </button>
+                    </div>
+                    <div className="indi-show-home-keywords">
+                      {item.keywords.map((item) => (
+                        <span>{item}</span>
+                      ))}
+                    </div>
+                    <p className="indi-show-home-text">{item.description}</p>
+                  </div>
+                </div>
               </Link>
             ))
           ) : (
@@ -93,4 +102,4 @@ function LatestRelease() {
   );
 }
 
-export default LatestRelease;
+export default ShortFlimCarousel;

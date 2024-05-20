@@ -1,4 +1,3 @@
-
 import React, { useContext } from "react";
 import "./Trailer.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -7,15 +6,15 @@ import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import AuthContext from "../../../Context/AuthContext";
 
-function Trailer() {
+function ShortFlimCarousel() {
   const filterType = "trailer";
   const [data] = useFetch(filterType);
-  const {mobile} = useContext(AuthContext);
+  const { mobile } = useContext(AuthContext);
 
   return (
     <div className={mobile ? "letest-mobile-release" : "letest-release"}>
       <div className="heading">
-      <p className="heading-title">{filterType}</p>
+        <p className="heading-title">{filterType}</p>
         <Link to={`/allcontent/${filterType}`}>
           <div className="heading-button">
             <p>View All {">"}</p>
@@ -44,7 +43,6 @@ function Trailer() {
                   <img
                     src={item.thumbnail}
                     alt={item.id}
-                    style={{ borderRadius: "5px" }}
                   />
                 </div>
               </Link>
@@ -70,17 +68,32 @@ function Trailer() {
           {data?.length > 0 ? (
             data?.map((item) => (
               <Link to={`/details/${item._id}`} key={item._id}>
-                <div
-                  className={
-                    mobile ? "individual-mobile-show" : "individual-show"
-                  }
-                >
+                <div className="individual-show">
+                  {console.log("item=>",item)}
                   <img
                     src={item.thumbnail}
                     alt={item.id}
-                    style={{ borderRadius: "5px" }}
+                    className="indi-img"
                   />
+
+                  <div className="indi-text-content">
+                    <div>
+                      <button className="indi-show-home-watch-now">Watch Now</button>
+                    </div>
+                    <div className="indi-show-home-keywords">
+                    {
+                      item.keywords.map((item) => 
+                        <span>{item}</span>
+                      )
+                    }
+                    </div>
+                    <p className="indi-show-home-text">{item.description}</p>
+                  </div>
+
+
                 </div>
+
+                
               </Link>
             ))
           ) : (
@@ -92,4 +105,5 @@ function Trailer() {
   );
 }
 
-export default Trailer;
+export default ShortFlimCarousel;
+

@@ -37,11 +37,7 @@
     height: 200px;
   }
   
-  .individual-mobile-show{
-    height: 10vh;
-  }
-  
-  .individual-show  img{
+  .individual-show  img , .mobile-individual-showimg {
     width: 100%;
     height: 100%;
   }
