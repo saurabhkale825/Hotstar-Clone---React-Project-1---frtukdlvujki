@@ -144,7 +144,8 @@ function Sidebar() {
         <div >
           <Link to="/deadend">
             <div className="individual-icon-sidebar">
-              <span>
+              <span className="mobile-sidebar-option"
+              >
                 <BoltOutlinedIcon sx={{fontSize: 25}}/>
               </span>
               <p className="mobile-sidebar-option"> New & Hot</p>
@@ -155,7 +156,7 @@ function Sidebar() {
         <div >
           <Link to="/deadend">
             <div className="individual-icon-sidebar">
-              <span>
+              <span className="mobile-sidebar-option">
                 <DownloadIcon sx={{fontSize: 25}} />
               </span>
               <p className="mobile-sidebar-option"> Downloads</p>
@@ -166,7 +167,7 @@ function Sidebar() {
         <div >
           <Link to="/user">
             <div className="individual-icon-sidebar">
-              <span>
+              <span className="mobile-sidebar-option">
                 <img
                   src="https://img1.hotstarext.com/image/upload/w_201,h_200,c_fill/v1/feature/profile/38.png"
                   alt="logo"

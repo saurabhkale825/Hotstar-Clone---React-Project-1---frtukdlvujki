@@ -66,8 +66,8 @@ function Details() {
           className={mobile ? "mobile-details-page-bg" : "details-page-bg"}
           style={{
             backgroundImage: `linear-gradient( to top, #000 ${
-              mobile ? "0%" : "10%"
-            }, transparent ${mobile ? "58%" : "78%"} ),url(${
+              mobile ? "0%" : "20%"
+            }, transparent ${mobile ? "88%" : "88%"} ),url(${
               data.thumbnail || ""
             })`,
             backgroundSize: "cover",

@@ -14,6 +14,7 @@ function App() {
                 theme="light"
                 autoClose={5000}
                 closeOnClick={true}
+                className="toast-container"
               />
 
     </div>
