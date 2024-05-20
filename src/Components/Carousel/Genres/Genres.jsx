@@ -56,17 +56,15 @@ function Genres() {
         >
           {data &&
             data.map((item, index) => (
-             
+              <Link to={"/deadend"}>
                 <div className="mobile-individual-card" key={index}>
-                   <Link to={"/deadend"} >
                   <img
                     src={item}
                     alt="language"
                     style={{ borderRadius: "5px", width: "100%" }}
                   />
-                  </Link>
                 </div>
-              
+              </Link>
             ))}
         </Carousel>
       ) : (
