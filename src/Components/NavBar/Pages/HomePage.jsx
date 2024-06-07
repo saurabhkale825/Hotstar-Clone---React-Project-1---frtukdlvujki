@@ -14,6 +14,8 @@ import SpecialCarousel from "../../Carousel/SpecialCarousel/SpecialCarousel";
 import Genres from "../../Carousel/Genres/Genres";
 import AuthContext from "../../../Context/AuthContext";
 import Login from "../../Login/Login";
+import Movies from "../../Carousel/Movies/Movies";
+
 
 
 function HomePage() {

@@ -4,16 +4,19 @@
   width: 90vw;
   position: relative;
   left: 7%;
-  margin-top: 3rem;
+  margin-top: 2vh;
+  padding: 2vh 0;
+  overflow: visible;
+  /* border: 1px solid white; */
 }
 
 .mobile-language {
   text-align: center;
   color: white;
-  width: 90vw;
+  width: 95vw;
   height: 15vh;
   position: relative;
-  left: 8%;
+  left: 2%;
   margin: 2vh 0;
 }
 
@@ -47,5 +50,5 @@
 .individual-card:hover {
   transform: scale(1.15);
   transition: 0.3s ease-in-out;
-  z-index: 999;
+  z-index: 9;
 }

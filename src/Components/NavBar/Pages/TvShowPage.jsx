@@ -3,6 +3,7 @@ import TvShows from '../../Carousel/TvShows/TvShows'
 import HeroSection from '../../HeroSection/HeroSection'
 import Sidebar from '../Sidebar'
 import Logo from '../Logo'
+import Footer from '../Footer'
 
 function TvShowPage() {
   return (
@@ -11,6 +12,7 @@ function TvShowPage() {
         <Logo />
         <Sidebar/>
         <TvShows />
+        <Footer/>
     </>
   )
 }

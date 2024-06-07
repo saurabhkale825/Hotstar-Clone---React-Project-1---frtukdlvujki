@@ -1,6 +1,6 @@
 .hero-section {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   background-position: center;
   background-size: cover;
   z-index: -25;
@@ -67,6 +67,8 @@
   max-width: 15vw;
   height: auto;
   z-index: 0;
+  position: absolute;
+  top: 0;
 }
 
 .watch-now-mobile {

@@ -22,6 +22,7 @@ function ShortFlimCarousel() {
         </Link>
       </div>
 
+
       {mobile ? (
         <Carousel
           className="mobile-portraitcarousel"

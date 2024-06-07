@@ -6,7 +6,6 @@ import LatestRelease from "../../Carousel/LetestRelease/LatestRelease";
 import SearchPageNotFoundContent from "../../SearchPageNotFoundContent";
 import Footer from "../../NavBar/Footer";
 import Cancel from "../../../Assets/Images/Search-page-cancel.png";
-import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import AuthContext from "../../../Context/AuthContext";
 
@@ -49,7 +48,7 @@ function SearchPage() {
   }, [searchValue]);
 
   return (
-    <>
+    <div className="main-searchpage">
       <Sidebar />
       <div className={mobile ? "mobile-searchpage" : "searchpage"}>
         <div className={mobile ? "mobile-searchpage-content": "searchpage-content"}>
@@ -104,7 +103,7 @@ function SearchPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

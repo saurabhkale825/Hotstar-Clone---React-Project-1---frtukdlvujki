@@ -18,10 +18,12 @@ body {
   width: 100vw;
   height: 100vh;
   height: auto;
-  background:linear-gradient(180deg,#16181f,#0f1014 33.33%);
+  background-color: black;
   background-position: center;
   background-size: cover;
   color: white;
+  z-index: -50;
+  overflow: visible;
 }
 
 .toast-container{
